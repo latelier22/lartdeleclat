@@ -1,0 +1,193 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Contact et demande de devis – L’art de l’éclat"
+  description="Contactez L’art de l’éclat pour une demande de devis detailing automobile à Trévé près de Loudéac."
+>
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24">
+    <div class="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+      <div>
+        <div class="french-line mb-6"></div>
+
+        <p class="text-sm uppercase tracking-[0.35em] text-[var(--gold-light)]">
+          Contact / Devis
+        </p>
+
+        <h1 class="mt-4 text-5xl font-semibold leading-tight md:text-7xl">
+          Demander<br />
+          <span class="gold-text">un devis.</span>
+        </h1>
+
+        <p class="mt-6 text-lg leading-relaxed text-white/70">
+          Décrivez votre véhicule et la prestation souhaitée. L’art de l’éclat
+          vous recontactera pour préciser votre besoin et proposer une solution adaptée.
+        </p>
+
+        <div class="mt-10 space-y-5 rounded-[2rem] border border-[var(--gold)]/30 bg-black/40 p-6">
+          <div>
+            <p class="text-sm uppercase tracking-[0.25em] text-white/40">Téléphone</p>
+            <a href="tel:0780034686" class="mt-1 block text-xl text-[var(--gold-light)]">
+              07.80.03.46.86
+            </a>
+          </div>
+
+          <div>
+            <p class="text-sm uppercase tracking-[0.25em] text-white/40">Email</p>
+            <a href="mailto:contact@lartdeleclat.fr" class="mt-1 block text-xl text-[var(--gold-light)]">
+              contact@lartdeleclat.fr
+            </a>
+          </div>
+
+          <div>
+            <p class="text-sm uppercase tracking-[0.25em] text-white/40">Adresse</p>
+            <p class="mt-1 text-xl text-white/80">
+              18 Résidence du Puits<br />
+              22600 Trévé
+            </p>
+          </div>
+        </div>
+      </div>
+{
+  Astro.url.searchParams.get("status") === "ok" && (
+    <div class="mb-6 rounded-2xl border border-green-500/40 bg-green-500/10 p-4 text-green-200">
+      Votre demande a bien été envoyée. L’art de l’éclat vous recontactera rapidement.
+    </div>
+  )
+}
+
+{
+  Astro.url.searchParams.get("status") === "missing" && (
+    <div class="mb-6 rounded-2xl border border-red-500/40 bg-red-500/10 p-4 text-red-200">
+      Merci de compléter tous les champs obligatoires.
+    </div>
+  )
+}
+
+{
+  Astro.url.searchParams.get("status") === "error" && (
+    <div class="mb-6 rounded-2xl border border-red-500/40 bg-red-500/10 p-4 text-red-200">
+      Une erreur est survenue. Vous pouvez envoyer votre demande directement à contact@lartdeleclat.fr.
+    </div>
+  )
+}
+      <form
+        action="/contact.php"
+        method="POST"
+        class="premium-card rounded-[2rem] p-6 md:p-8"
+      >
+        <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off" />
+
+        <div class="grid gap-5 md:grid-cols-2">
+          <div>
+            <label for="nom" class="mb-2 block text-sm text-white/70">
+              Nom *
+            </label>
+            <input
+              id="nom"
+              name="nom"
+              type="text"
+              required
+              class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white outline-none focus:border-[var(--gold)]"
+            />
+          </div>
+
+          <div>
+            <label for="telephone" class="mb-2 block text-sm text-white/70">
+              Téléphone *
+            </label>
+            <input
+              id="telephone"
+              name="telephone"
+              type="tel"
+              required
+              class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white outline-none focus:border-[var(--gold)]"
+            />
+          </div>
+
+          <div>
+            <label for="email" class="mb-2 block text-sm text-white/70">
+              Email *
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white outline-none focus:border-[var(--gold)]"
+            />
+          </div>
+
+          <div>
+            <label for="vehicule" class="mb-2 block text-sm text-white/70">
+              Véhicule
+            </label>
+            <input
+              id="vehicule"
+              name="vehicule"
+              type="text"
+              placeholder="Ex : Audi A3, BMW Série 3..."
+              class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white outline-none placeholder:text-white/30 focus:border-[var(--gold)]"
+            />
+          </div>
+        </div>
+
+        <div class="mt-5">
+          <label for="prestation" class="mb-2 block text-sm text-white/70">
+            Prestation souhaitée *
+          </label>
+          <select
+            id="prestation"
+            name="prestation"
+            required
+            class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white outline-none focus:border-[var(--gold)]"
+          >
+            <option value="">Choisir une prestation</option>
+            <option value="Correction de vernis">Correction de vernis</option>
+            <option value="Protection carrosserie">Protection carrosserie</option>
+            <option value="Traitement céramique">Traitement céramique</option>
+            <option value="Rénovation d’optiques">Rénovation d’optiques</option>
+            <option value="Films teintés">Films teintés</option>
+            <option value="Autre demande">Autre demande</option>
+          </select>
+        </div>
+
+        <div class="mt-5">
+          <label for="message" class="mb-2 block text-sm text-white/70">
+            Votre demande *
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows="7"
+            required
+            placeholder="Décrivez l’état du véhicule, la prestation souhaitée, vos disponibilités..."
+            class="w-full resize-none rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white outline-none placeholder:text-white/30 focus:border-[var(--gold)]"
+          ></textarea>
+        </div>
+
+        <div class="mt-5 flex items-start gap-3 text-sm text-white/60">
+          <input
+            id="rgpd"
+            name="rgpd"
+            type="checkbox"
+            required
+            class="mt-1"
+          />
+          <label for="rgpd">
+            J’accepte que les informations transmises soient utilisées uniquement
+            pour répondre à ma demande de contact ou de devis.
+          </label>
+        </div>
+
+        <button
+          type="submit"
+          class="mt-8 w-full rounded-full bg-[var(--gold)] px-7 py-4 font-semibold text-black shadow-lg shadow-yellow-900/30 hover:bg-[var(--gold-light)]"
+        >
+          Envoyer ma demande
+        </button>
+      </form>
+    </div>
+  </section>
+</BaseLayout>

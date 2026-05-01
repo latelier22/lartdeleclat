@@ -1,0 +1,79 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactCta from "../components/ContactCta.astro";
+---
+
+<BaseLayout
+  title="Réalisations – L’art de l’éclat"
+  description="Découvrez les réalisations de L’art de l’éclat : correction de vernis, rénovation de phares, protection carrosserie et films teintés."
+>
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24">
+    <div class="max-w-3xl">
+      <div class="french-line mb-6"></div>
+
+      <p class="text-sm uppercase tracking-[0.35em] text-[var(--gold-light)]">
+        Réalisations
+      </p>
+
+      <h1 class="mt-4 text-5xl font-semibold leading-tight md:text-7xl">
+        Des résultats visibles,<br />
+        <span class="gold-text">avant même le premier regard.</span>
+      </h1>
+
+      <p class="mt-6 text-lg leading-relaxed text-white/70">
+        Cette page accueillera les photos avant/après des véhicules traités :
+        correction de vernis, rénovation d’optiques, protections et films teintés.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6">
+    <div class="grid gap-6 md:grid-cols-3">
+      <article class="premium-card rounded-[2rem] p-6">
+        <div class="mb-6 aspect-[4/3] rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-white/10 to-black"></div>
+
+        <h2 class="text-2xl font-semibold text-[var(--gold-light)]">
+          Correction de vernis
+        </h2>
+
+        <p class="mt-4 leading-relaxed text-white/70">
+          Suppression des micro-rayures, ravivement de la brillance et profondeur du vernis.
+        </p>
+      </article>
+
+      <article class="premium-card rounded-[2rem] p-6">
+        <div class="mb-6 aspect-[4/3] rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-white/10 to-black"></div>
+
+        <h2 class="text-2xl font-semibold text-[var(--gold-light)]">
+          Rénovation d’optiques
+        </h2>
+
+        <p class="mt-4 leading-relaxed text-white/70">
+          Phares ternis rénovés par polissage et protection durable par vernissage.
+        </p>
+      </article>
+
+      <article class="premium-card rounded-[2rem] p-6">
+        <div class="mb-6 aspect-[4/3] rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-white/10 to-black"></div>
+
+        <h2 class="text-2xl font-semibold text-[var(--gold-light)]">
+          Protection carrosserie
+        </h2>
+
+        <p class="mt-4 leading-relaxed text-white/70">
+          Cire carnauba ou traitement céramique pour protéger durablement l’éclat.
+        </p>
+      </article>
+    </div>
+
+    <div class="mt-10 rounded-[2rem] border border-[var(--gold)]/30 bg-black/50 p-6 text-center md:p-10">
+      <p class="text-lg leading-relaxed text-white/75">
+        Les premières réalisations pourront être ajoutées progressivement avec des photos
+        fournies par le client : avant/après, gros plans de carrosserie, phares rénovés,
+        véhicules protégés ou vitres teintées.
+      </p>
+    </div>
+  </section>
+
+  <ContactCta />
+</BaseLayout>

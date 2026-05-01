@@ -1,0 +1,106 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactCta from "../components/ContactCta.astro";
+---
+
+<BaseLayout
+  title="À propos – L’art de l’éclat"
+  description="Découvrez l’univers de L’art de l’éclat, atelier de detailing automobile à Trévé près de Loudéac."
+>
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24">
+    <div class="grid gap-12 md:grid-cols-[1fr_0.9fr] md:items-center">
+      <div>
+        <div class="french-line mb-6"></div>
+
+        <p class="text-sm uppercase tracking-[0.35em] text-[var(--gold-light)]">
+          À propos
+        </p>
+
+        <h1 class="mt-4 text-5xl font-semibold leading-tight md:text-7xl">
+          Une approche artisanale<br />
+          <span class="gold-text">du detailing automobile.</span>
+        </h1>
+
+        <p class="mt-6 text-lg leading-relaxed text-white/70">
+          L’art de l’éclat est un atelier spécialisé dans l’esthétique automobile
+          de précision. Chaque véhicule est traité avec attention, méthode et
+          exigence, dans le respect de son état, de son usage et des attentes du client.
+        </p>
+      </div>
+
+      <div class="premium-card rounded-[2rem] p-6">
+        <img
+          src="/images/logo-art-eclat.webp"
+          alt="L’art de l’éclat"
+          class="w-full rounded-[1.5rem]"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6">
+    <div class="premium-card rounded-[2rem] p-8 md:p-12">
+      <div class="grid gap-10 md:grid-cols-2">
+        <div>
+          <p class="text-sm uppercase tracking-[0.3em] text-[var(--gold-light)]">
+            La philosophie
+          </p>
+
+          <h2 class="mt-4 text-4xl font-semibold">
+            Restaurer, protéger, sublimer.
+          </h2>
+        </div>
+
+        <div class="space-y-5 text-lg leading-relaxed text-white/75">
+          <p>
+            L’objectif de L’art de l’éclat est de redonner aux véhicules leur aspect
+            d’origine, voire un rendu supérieur au neuf lorsque l’état du support le permet.
+          </p>
+
+          <p>
+            Le travail repose sur une approche précise : observation, préparation,
+            correction, finition et protection. Chaque étape compte pour obtenir un
+            résultat propre, durable et élégant.
+          </p>
+
+          <p>
+            Les prestations s’adressent aussi bien aux particuliers qu’aux professionnels,
+            aux véhicules récents, de prestige, de collection ou simplement aux automobilistes
+            qui souhaitent prendre soin de leur voiture.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6">
+    <div class="grid gap-6 md:grid-cols-5">
+      <div class="premium-card rounded-[1.5rem] p-6">
+        <h3 class="text-xl font-semibold text-[var(--gold-light)]">Artisanat</h3>
+        <p class="mt-3 text-white/65">Un travail manuel, soigné et précis.</p>
+      </div>
+
+      <div class="premium-card rounded-[1.5rem] p-6">
+        <h3 class="text-xl font-semibold text-[var(--gold-light)]">Passion</h3>
+        <p class="mt-3 text-white/65">Une vraie culture de l’automobile.</p>
+      </div>
+
+      <div class="premium-card rounded-[1.5rem] p-6">
+        <h3 class="text-xl font-semibold text-[var(--gold-light)]">Détail</h3>
+        <p class="mt-3 text-white/65">Une attention portée aux finitions.</p>
+      </div>
+
+      <div class="premium-card rounded-[1.5rem] p-6">
+        <h3 class="text-xl font-semibold text-[var(--gold-light)]">Excellence</h3>
+        <p class="mt-3 text-white/65">Une recherche constante du beau résultat.</p>
+      </div>
+
+      <div class="premium-card rounded-[1.5rem] p-6">
+        <h3 class="text-xl font-semibold text-[var(--gold-light)]">Authenticité</h3>
+        <p class="mt-3 text-white/65">Une relation directe et transparente.</p>
+      </div>
+    </div>
+  </section>
+
+  <ContactCta />
+</BaseLayout>

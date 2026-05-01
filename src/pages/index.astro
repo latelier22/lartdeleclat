@@ -1,17 +1,278 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ScrollReveal from "../components/ScrollReveal.astro";
+import ScrollBlurImage from "../components/ScrollBlurImage.astro";
+import ContactCta from "../components/ContactCta.astro";
 
+const services = [
+  {
+    number: "01",
+    title: "Correction de vernis",
+    text: "Polissage et poli-lustrage pour corriger les micro-rayures, hologrammes et défauts de surface.",
+    link: "/prestations"
+  },
+  {
+    number: "02",
+    title: "Protection carrosserie",
+    text: "Cire de prestige à la carnauba ou traitement céramique longue durée pour préserver l’éclat.",
+    link: "/prestations"
+  },
+  {
+    number: "03",
+    title: "Rénovation d’optiques",
+    text: "Polissage et vernissage des phares pour retrouver transparence, esthétique et sécurité.",
+    link: "/prestations"
+  },
+  {
+    number: "04",
+    title: "Films teintés",
+    text: "Pose de films haute performance pour le confort, le style, la protection solaire et la confidentialité.",
+    link: "/prestations"
+  }
+];
+
+const values = [
+  "Artisanat",
+  "Passion",
+  "Détail",
+  "Excellence",
+  "Authenticité"
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="L’art de l’éclat – Detailing automobile à Trévé près de Loudéac"
+  description="L’art de l’éclat restaure, protège et sublime votre véhicule : correction de vernis, protection céramique, rénovation de phares et films teintés."
+>
+  <main>
+    <!-- HERO -->
+    <section class="relative overflow-hidden">
+      <div class="absolute right-0 top-0 h-80 w-80 rounded-full bg-[var(--gold)]/20 blur-3xl float-slow"></div>
+      <div class="absolute left-0 top-64 h-64 w-64 rounded-full bg-[var(--gold-light)]/10 blur-3xl float-delay"></div>
+
+      <div class="mx-auto grid min-h-[calc(100vh-80px)] max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1fr_0.95fr]">
+        <div class="slide-right">
+          <div class="french-line mb-6"></div>
+
+          <div class="gold-chip">
+            <span class="gold-dot"></span>
+            Expert detailing automobile
+          </div>
+
+          <h1 class="mt-6 text-4xl font-semibold leading-tight sm:text-5xl lg:text-7xl">
+            Restaurer,<br />
+            protéger,<br />
+            <span class="gold-text">sublimer.</span>
+          </h1>
+
+          <p class="mt-6 max-w-xl text-lg leading-relaxed text-white/72">
+            L’art de l’éclat est un atelier spécialisé dans l’esthétique automobile
+            de précision à Trévé, près de Loudéac.
+          </p>
+
+          <p class="mt-4 max-w-xl text-base leading-relaxed text-white/55">
+            Correction de vernis, protection carrosserie, rénovation d’optiques
+            et pose de films teintés.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a
+              href="/contact"
+              class="rounded-full bg-[var(--gold)] px-7 py-3.5 font-semibold text-black shadow-lg shadow-yellow-900/30 hover:bg-[var(--gold-light)]"
+            >
+              Demander un devis
+            </a>
+
+            <a
+              href="/prestations"
+              class="rounded-full border border-white/20 px-7 py-3.5 font-semibold text-white hover:border-[var(--gold)] hover:text-[var(--gold-light)]"
+            >
+              Voir les prestations
+            </a>
+          </div>
+        </div>
+
+        <div class="relative slide-left">
+          <div class="absolute -inset-5 rounded-[2.5rem] bg-[var(--gold)]/20 blur-3xl"></div>
+
+          <div class="home-glow-card relative rounded-[2.5rem] p-4 md:p-6">
+            <div class="rounded-[2rem] border border-white/10 bg-black/55 p-4 md:p-6">
+              <img
+                src="/images/logo-art-eclat-hero.webp"
+                alt="L’art de l’éclat"
+                class="mx-auto w-full object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCS RAPIDES -->
+    <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 md:py-14">
+      <div class="grid gap-4 md:grid-cols-3">
+        <article class="home-glow-card fade-in rounded-[2rem] p-6">
+          <p class="service-number">PRÉCISION</p>
+          <h2 class="mt-3 text-2xl font-semibold text-[var(--gold-light)]">
+            Un travail au détail
+          </h2>
+          <p class="mt-4 leading-relaxed text-white/65">
+            Chaque véhicule est observé, préparé et traité selon son état réel.
+          </p>
+        </article>
+
+        <article class="home-glow-card fade-in rounded-[2rem] p-6 ">
+          <p class="service-number">PROTECTION</p>
+          <h2 class="mt-3 text-2xl font-semibold text-[var(--gold-light)]">
+            Des solutions durables
+          </h2>
+          <p class="mt-4 leading-relaxed text-white/65">
+            Cire carnauba, céramique, vernis optiques ou films haute performance.
+          </p>
+        </article>
+
+        <article class="home-glow-card fade-in rounded-[2rem] p-6">
+          <p class="service-number">ÉCLAT</p>
+          <h2 class="mt-3 text-2xl font-semibold text-[var(--gold-light)]">
+            Un rendu premium
+          </h2>
+          <p class="mt-4 leading-relaxed text-white/65">
+            L’objectif : redonner au véhicule son aspect d’origine, voire mieux que le neuf.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20">
+      <div class="mb-10 max-w-3xl fade-in">
+        <p class="text-sm uppercase tracking-[0.35em] text-[var(--gold-light)]">
+          Prestations
+        </p>
+
+        <h2 class="mt-4 text-4xl font-semibold md:text-5xl">
+          L’essentiel pour révéler l’éclat du véhicule.
+        </h2>
+
+        <p class="mt-5 text-lg leading-relaxed text-white/65">
+          Des prestations claires, ciblées et adaptées à l’état du support.
+        </p>
+      </div>
+
+      <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        {services.map((service, index) => (
+          <a
+            href={service.link}
+            class={`home-glow-card rounded-[2rem] p-6 transition hover:-translate-y-1 ${
+              index % 2 === 0 ? "slide-right" : "slide-left"
+            }`}
+          >
+            <p class="service-number">{service.number}</p>
+
+            <h3 class="mt-4 text-2xl font-semibold text-[var(--gold-light)]">
+              {service.title}
+            </h3>
+
+            <p class="mt-4 leading-relaxed text-white/65">
+              {service.text}
+            </p>
+
+            <p class="mt-6 text-sm font-semibold text-[var(--gold-light)]">
+              En savoir plus →
+            </p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- IMAGE + TEXTE -->
+    <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6 md:py-16">
+      <div class="grid gap-8 lg:grid-cols-2 lg:items-stretch">
+        <ScrollBlurImage
+          src="/images/logo-art-eclat.webp"
+          alt="Logo L’art de l’éclat"
+          className="min-h-[360px]"
+          imageClass="min-h-[360px]"
+        />
+
+        <div class="home-glow-card slide-left flex flex-col justify-center rounded-[2.5rem] p-8 md:p-10">
+          <p class="text-sm uppercase tracking-[0.35em] text-[var(--gold-light)]">
+            Savoir-faire
+          </p>
+
+          <h2 class="mt-4 text-4xl font-semibold">
+            Une esthétique automobile de précision.
+          </h2>
+
+          <p class="mt-6 text-lg leading-relaxed text-white/70">
+            L’art de l’éclat restaure, protège et sublime chaque véhicule grâce
+            à un savoir-faire artisanal et à des produits de haute technicité.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            {values.map((value) => (
+              <span class="rounded-full border border-[var(--gold)]/30 bg-[var(--gold)]/10 px-4 py-2 text-sm text-[var(--gold-light)]">
+                {value}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANDE AVANT / APRÈS -->
+    <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6 md:py-16">
+      <div class="home-glow-card zoom-in rounded-[2.5rem] p-8 md:p-12">
+        <div class="grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-center">
+          <div>
+            <p class="text-sm uppercase tracking-[0.35em] text-[var(--gold-light)]">
+              Réalisations
+            </p>
+
+            <h2 class="mt-4 text-4xl font-semibold">
+              Montrer la transformation.
+            </h2>
+          </div>
+
+          <div>
+            <p class="text-lg leading-relaxed text-white/70">
+              La page réalisations pourra accueillir les photos avant/après :
+              carrosserie corrigée, phares rénovés, véhicules protégés, vitres teintées.
+            </p>
+
+            <div class="mt-7">
+              <a
+                href="/realisations"
+                class="inline-flex rounded-full border border-[var(--gold)] px-7 py-3 font-semibold text-[var(--gold-light)] hover:bg-[var(--gold)] hover:text-black"
+              >
+                Voir les réalisations
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 grid gap-4 md:grid-cols-3">
+          <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5 fade-in">
+            <p class="text-[var(--gold-light)]">Avant</p>
+            <p class="mt-2 text-white/60">Vernis terne, micro-rayures, optiques opaques.</p>
+          </div>
+
+          <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5 fade-in">
+            <p class="text-[var(--gold-light)]">Intervention</p>
+            <p class="mt-2 text-white/60">Préparation, correction, finition et protection.</p>
+          </div>
+
+          <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5 fade-in">
+            <p class="text-[var(--gold-light)]">Après</p>
+            <p class="mt-2 text-white/60">Brillance, profondeur, protection et rendu premium.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <ContactCta />
+  </main>
+
+  <ScrollReveal />
+</BaseLayout>

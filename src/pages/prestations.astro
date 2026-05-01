@@ -1,0 +1,117 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactCta from "../components/ContactCta.astro";
+
+const prestations = [
+  {
+    title: "Correction de vernis",
+    subtitle: "Polissage / Poli-lustrage",
+    text: "La correction de vernis permet de supprimer ou d’atténuer les micro-rayures, hologrammes, traces de lavage et défauts de surface. Le but est de retrouver une carrosserie plus profonde, plus nette et plus brillante.",
+    details: [
+      "Analyse de l’état du vernis",
+      "Décontamination de la carrosserie",
+      "Polissage adapté au niveau de défaut",
+      "Finition brillante et profonde"
+    ]
+  },
+  {
+    title: "Protection carrosserie",
+    subtitle: "Cire carnauba ou traitement céramique",
+    text: "Une protection permet de préserver l’éclat du véhicule et de faciliter son entretien. Selon le besoin, L’art de l’éclat propose une cire de prestige à la carnauba ou une protection céramique longue durée.",
+    details: [
+      "Cire de prestige : tenue 6 à 9 mois",
+      "Traitement céramique : garantie 2 à 4 ans",
+      "Effet hydrophobe",
+      "Brillance renforcée"
+    ]
+  },
+  {
+    title: "Rénovation d’optiques",
+    subtitle: "Polissage et vernissage des phares",
+    text: "Avec le temps, les optiques deviennent ternes, jaunies ou opaques. Une rénovation permet d’améliorer l’esthétique, la visibilité et la sécurité, tout en évitant parfois un remplacement coûteux.",
+    details: [
+      "Ponçage progressif",
+      "Polissage des optiques",
+      "Application d’un vernis protecteur",
+      "Garantie jusqu’à 4 ans"
+    ]
+  },
+  {
+    title: "Films teintés",
+    subtitle: "Pose de films haute performance",
+    text: "La pose de films teintés améliore le confort, l’esthétique et la protection solaire du véhicule. Elle permet aussi de renforcer la confidentialité à l’intérieur de l’habitacle.",
+    details: [
+      "Pose soignée",
+      "Film haute performance",
+      "Garantie 15 ans",
+      "Rendu esthétique et durable"
+    ]
+  }
+];
+---
+
+<BaseLayout
+  title="Prestations – L’art de l’éclat"
+  description="Correction de vernis, protection carrosserie, rénovation d’optiques et films teintés à Trévé près de Loudéac."
+>
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24">
+    <div class="max-w-3xl">
+      <div class="french-line mb-6"></div>
+
+      <p class="text-sm uppercase tracking-[0.35em] text-[var(--gold-light)]">
+        Prestations
+      </p>
+
+      <h1 class="mt-4 text-5xl font-semibold leading-tight md:text-7xl">
+        L’exigence du détail,<br />
+        <span class="gold-text">au service de l’éclat.</span>
+      </h1>
+
+      <p class="mt-6 text-lg leading-relaxed text-white/70">
+        L’art de l’éclat accompagne les particuliers et professionnels dans la
+        restauration, la protection et la mise en valeur de leur véhicule.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6">
+    <div class="grid gap-8">
+      {prestations.map((item, index) => (
+        <article class="premium-card overflow-hidden rounded-[2rem] p-6 md:p-10">
+          <div class="grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-start">
+            <div>
+              <p class="text-sm uppercase tracking-[0.3em] text-white/40">
+                0{index + 1}
+              </p>
+
+              <h2 class="mt-3 text-3xl font-semibold text-[var(--gold-light)] md:text-4xl">
+                {item.title}
+              </h2>
+
+              <p class="mt-2 text-lg text-white/80">
+                {item.subtitle}
+              </p>
+            </div>
+
+            <div>
+              <p class="text-lg leading-relaxed text-white/75">
+                {item.text}
+              </p>
+
+              <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+                {item.details.map((detail) => (
+                  <li class="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-white/75">
+                    <span class="mr-2 text-[var(--gold-light)]">•</span>
+                    {detail}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <ContactCta />
+</BaseLayout>
