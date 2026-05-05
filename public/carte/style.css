@@ -1,0 +1,347 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: #020202;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f7f1e4;
+
+  /* FOND CARBONE INCLINÉ 30° */
+  background-image:
+    radial-gradient(circle at top right, rgba(214, 162, 63, 0.28), transparent 36%),
+
+    linear-gradient(30deg, rgba(255,255,255,0.16) 25%, transparent 25%),
+    linear-gradient(-60deg, rgba(255,255,255,0.11) 25%, transparent 25%),
+    linear-gradient(30deg, transparent 75%, rgba(255,255,255,0.09) 75%),
+    linear-gradient(-60deg, transparent 75%, rgba(255,255,255,0.08) 75%),
+
+    linear-gradient(180deg, #010101 0%, #080808 45%, #020202 100%);
+
+  background-size:
+    auto,
+    42px 42px,
+    42px 42px,
+    42px 42px,
+    42px 42px,
+    auto;
+
+  background-position:
+    center,
+    0 0,
+    0 21px,
+    21px -21px,
+    -21px 0,
+    center;
+
+  background-attachment: fixed;
+}
+
+/* PAGE MOBILE */
+.page {
+  width: 100vw;
+  height: 100vh;
+  max-width: 520px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 86px;
+  overflow: hidden;
+
+  /* IMPORTANT : transparent pour voir le carbone */
+  background: transparent;
+
+  border-left: 1px solid rgba(214, 162, 63, 0.35);
+  border-right: 1px solid rgba(214, 162, 63, 0.35);
+}
+
+/* CONTENU PRINCIPAL */
+.card {
+  height: 100vh;
+  overflow-y: auto;
+
+  /* Le fond carbone reste visible */
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,0.18),
+      rgba(0,0,0,0.34)
+    );
+}
+
+/* HERO */
+.hero {
+  padding: 12px 14px 10px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.10);
+}
+
+.logo {
+  width: 100%;
+  max-width: 285px;
+  display: block;
+  margin: 0 auto 8px;
+}
+
+.badge {
+  display: inline-flex;
+  margin: 0 auto 8px;
+  padding: 5px 10px;
+  border: 1px solid rgba(214, 162, 63, 0.55);
+  border-radius: 999px;
+  color: #f4d27a;
+  font-size: 9px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  background: rgba(214, 162, 63, 0.08);
+}
+
+h1 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.05;
+  color: #f4d27a;
+  letter-spacing: .4px;
+}
+
+h2 {
+  margin: 4px 0 9px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.intro {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.32;
+  color: rgba(255,255,255,0.76);
+}
+
+/* INFOS CONTACT */
+.info {
+  margin: 0 12px;
+  border: 1px solid rgba(214, 162, 63, 0.38);
+  border-radius: 18px;
+
+  /* Transparent : on voit le carbone */
+  background: rgba(0, 0, 0, 0.22);
+
+  padding: 10px 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.info a {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.90);
+  text-decoration: none;
+  font-size: 13.2px;
+  line-height: 1.15;
+}
+
+.icon {
+  text-align: center;
+  font-size: 14px;
+  color: #f4d27a;
+}
+
+/* SERVICES */
+.services {
+  padding: 12px 14px 8px;
+}
+
+.services h3,
+.hours h3 {
+  margin: 0 0 10px;
+  text-align: center;
+  color: #f4d27a;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.service-grid div {
+  padding: 9px;
+  border: 1px solid rgba(214, 162, 63, 0.40);
+  border-radius: 12px;
+
+  /* Transparent : carbone visible */
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.service-grid strong {
+  display: block;
+  color: #f4d27a;
+  font-size: 12.3px;
+  margin-bottom: 4px;
+}
+
+.service-grid span {
+  display: block;
+  color: rgba(255,255,255,0.70);
+  font-size: 10.8px;
+  line-height: 1.22;
+}
+
+/* ZONE / HORAIRES */
+.hours {
+  padding: 0 14px 12px;
+  text-align: center;
+}
+
+.hours p {
+  margin: 3px 0;
+  font-size: 13px;
+  line-height: 1.2;
+  color: rgba(255,255,255,0.74);
+}
+
+/* BARRE DROITE */
+.side {
+  height: 100vh;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(244, 210, 122, 0.95) 0%,
+      rgba(214, 162, 63, 0.92) 45%,
+      rgba(143, 93, 23, 0.90) 100%
+    );
+
+  color: #050505;
+  padding: 16px 8px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+
+  border-left: 1px solid rgba(255,255,255,0.22);
+}
+
+.side-action {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: #050505;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 8.2px;
+  font-weight: 700;
+  letter-spacing: .35px;
+  line-height: 1.15;
+  padding: 0;
+}
+
+.side-action .big {
+  display: block;
+  font-size: 25px;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+/* QR CODE */
+.qr {
+  margin-top: auto;
+  text-align: center;
+}
+
+.qr img {
+  width: 66px;
+  height: 66px;
+  background: #fff;
+  padding: 3px;
+  border-radius: 8px;
+}
+
+.qr small {
+  display: block;
+  margin-top: 5px;
+  font-size: 6.5px;
+  color: #1a1205;
+  font-weight: 700;
+}
+
+/* TRÈS PETITS ÉCRANS */
+@media (max-height: 680px) {
+  .logo {
+    max-width: 235px;
+    margin-bottom: 6px;
+  }
+
+  .hero {
+    padding: 8px 12px 7px;
+  }
+
+  .badge {
+    font-size: 8px;
+    padding: 4px 9px;
+    margin-bottom: 6px;
+  }
+
+  h1 {
+    font-size: 19px;
+  }
+
+  h2 {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .intro {
+    font-size: 12px;
+  }
+
+  .info {
+    padding: 9px 10px;
+    gap: 7px;
+  }
+
+  .info a {
+    font-size: 12.3px;
+  }
+
+  .services {
+    padding: 9px 12px 6px;
+  }
+
+  .service-grid div {
+    padding: 7px;
+  }
+
+  .service-grid strong {
+    font-size: 11.5px;
+  }
+
+  .service-grid span {
+    font-size: 10px;
+  }
+
+  .side {
+    gap: 13px;
+  }
+
+  .qr img {
+    width: 58px;
+    height: 58px;
+  }
+}

@@ -1,79 +1,350 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ContactCta from "../components/ContactCta.astro";
+import ScrollReveal from "../components/ScrollReveal.astro";
+
+const optiques = [
+  {
+    title: "Rénovation optique 1",
+    before: "/images/optique-1-avant.webp",
+    after: "/images/optique-1-apres.webp"
+  },
+  {
+    title: "Rénovation optique 2",
+    before: "/images/optique-2-avant.webp",
+    after: "/images/optique-2-apres.webp"
+  },
+  {
+    title: "Rénovation optique 3",
+    before: "/images/optique-3-avant.webp",
+    after: "/images/optique-3-apres.webp"
+  },
+  {
+    title: "Rénovation optique 4",
+    before: "/images/optique-4-avant.webp",
+    after: "/images/optique-4-apres.webp"
+  }
+];
+
+const etapesOptiques = [
+  {
+    title: "Préparation",
+    image: "/images/optique-etape-1.webp"
+  },
+  {
+    title: "Ponçage progressif",
+    image: "/images/optique-etape-2.webp"
+  },
+  {
+    title: "Polissage",
+    image: "/images/optique-etape-3.webp"
+  },
+  {
+    title: "Finition / protection",
+    image: "/images/optique-etape-4.webp"
+  }
+];
 ---
 
 <BaseLayout
   title="Réalisations – L’art de l’éclat"
-  description="Découvrez les réalisations de L’art de l’éclat : correction de vernis, rénovation de phares, protection carrosserie et films teintés."
+  description="Découvrez les réalisations de L’art de l’éclat : correction de vernis, rénovation d’optiques et pose de films teintés à Trévé près de Loudéac."
 >
-  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24">
-    <div class="max-w-3xl">
-      <div class="french-line mb-6"></div>
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="absolute right-0 top-0 h-80 w-80 rounded-full bg-[var(--gold)]/20 blur-3xl float-slow"></div>
+    <div class="absolute left-0 top-64 h-64 w-64 rounded-full bg-[var(--gold-light)]/10 blur-3xl float-delay"></div>
 
+    <div class="mx-auto grid min-h-[70vh] max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.95fr_1.05fr]">
+      <div class="slide-right">
+        <div class="french-line mb-6"></div>
+
+        <p class="text-sm uppercase tracking-[0.35em] text-[var(--gold-light)]">
+          Réalisations
+        </p>
+
+        <h1 class="mt-4 text-5xl font-semibold leading-tight md:text-7xl">
+          Avant / Après,<br />
+          <span class="gold-text">la preuve par l’éclat.</span>
+        </h1>
+
+        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-white/70">
+          Correction de vernis, rénovation d’optiques et pose de films teintés :
+          découvrez quelques exemples de résultats obtenus.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a
+            href="/contact"
+            class="rounded-full bg-[var(--gold)] px-7 py-3.5 font-semibold text-black shadow-lg shadow-yellow-900/30 hover:bg-[var(--gold-light)]"
+          >
+            Demander un devis
+          </a>
+
+          <a
+            href="/prestations"
+            class="rounded-full border border-white/20 px-7 py-3.5 font-semibold text-white hover:border-[var(--gold)] hover:text-[var(--gold-light)]"
+          >
+            Voir les prestations
+          </a>
+        </div>
+      </div>
+
+       <div class="overflow-hidden rounded-[1.5rem] border border-white/10">
+            <img
+              src="/images/vernis.webp"
+              alt="Correction de vernis automobile"
+              class="h-full w-auto object-cover transition duration-700 hover:scale-105"
+            />
+          </div>
+       
+         
+
+          <!-- <div class="overflow-hidden rounded-[1.5rem] border border-white/10">
+            <img
+              src="/images/optique-1-apres.webp"
+              alt="Optique rénovée"
+              class="aspect-[4/3] h-full w-full object-cover transition duration-700 hover:scale-105"
+            />
+          </div> -->
+
+          <!-- <div class="overflow-hidden rounded-[1.5rem] border border-white/10 sm:col-span-2">
+            <img
+              src="/images/film-teinte.webp"
+              alt="Pose de film teinté"
+              class="aspect-[16/7] h-full w-full object-cover transition duration-700 hover:scale-105"
+            />
+          </div> -->
+        </div>
+      </div>
+    
+  </section>
+
+  <!-- VERNIS -->
+  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-20">
+    <div class="mb-10 max-w-3xl fade-in">
       <p class="text-sm uppercase tracking-[0.35em] text-[var(--gold-light)]">
-        Réalisations
+        Correction de vernis
       </p>
 
-      <h1 class="mt-4 text-5xl font-semibold leading-tight md:text-7xl">
-        Des résultats visibles,<br />
-        <span class="gold-text">avant même le premier regard.</span>
-      </h1>
+      <h2 class="mt-4 text-4xl font-semibold md:text-5xl">
+        Retrouver profondeur, brillance et finition.
+      </h2>
 
-      <p class="mt-6 text-lg leading-relaxed text-white/70">
-        Cette page accueillera les photos avant/après des véhicules traités :
-        correction de vernis, rénovation d’optiques, protections et films teintés.
+      <p class="mt-5 text-lg leading-relaxed text-white/65">
+        Le polissage et le poli-lustrage permettent d’améliorer l’aspect du vernis,
+        d’atténuer les défauts et de révéler la profondeur de la carrosserie.
       </p>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2">
+      <article class="home-glow-card slide-right overflow-hidden rounded-[2rem]">
+        <div class="relative aspect-[4/3] overflow-hidden">
+          <span class="absolute left-4 top-4 z-10 rounded-full bg-black/75 px-4 py-2 text-sm font-semibold text-white backdrop-blur">
+            Avant
+          </span>
+
+          <img
+            src="/images/vernis-1-avant.webp"
+            alt="Vernis avant correction"
+            class="h-full w-full object-cover transition duration-700 hover:scale-105"
+          />
+        </div>
+
+        <div class="p-6">
+          <p class="service-number">VERNIS</p>
+          <h3 class="mt-3 text-2xl font-semibold text-white">
+            Surface avant correction
+          </h3>
+        </div>
+      </article>
+
+      <article class="home-glow-card slide-left overflow-hidden rounded-[2rem]">
+        <div class="relative aspect-[4/3] overflow-hidden">
+          <span class="absolute left-4 top-4 z-10 rounded-full bg-[var(--gold)] px-4 py-2 text-sm font-semibold text-black">
+            Après
+          </span>
+
+          <img
+            src="/images/vernis-1-apres.webp"
+            alt="Vernis après correction"
+            class="h-full w-full object-cover transition duration-700 hover:scale-105"
+          />
+        </div>
+
+        <div class="p-6">
+          <p class="service-number">BRILLANCE</p>
+          <h3 class="mt-3 text-2xl font-semibold text-[var(--gold-light)]">
+            Éclat et profondeur retrouvés
+          </h3>
+        </div>
+      </article>
     </div>
   </section>
 
-  <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6">
-    <div class="grid gap-6 md:grid-cols-3">
-      <article class="premium-card rounded-[2rem] p-6">
-        <div class="mb-6 aspect-[4/3] rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-white/10 to-black"></div>
+  <!-- OPTIQUES AVANT APRES -->
+  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-20">
+    <div class="mb-10 max-w-3xl fade-in">
+      <p class="text-sm uppercase tracking-[0.35em] text-[var(--gold-light)]">
+        Rénovation d’optiques
+      </p>
 
-        <h2 class="text-2xl font-semibold text-[var(--gold-light)]">
-          Correction de vernis
-        </h2>
+      <h2 class="mt-4 text-4xl font-semibold md:text-5xl">
+        Des phares plus clairs, plus propres, plus sûrs.
+      </h2>
 
-        <p class="mt-4 leading-relaxed text-white/70">
-          Suppression des micro-rayures, ravivement de la brillance et profondeur du vernis.
-        </p>
-      </article>
-
-      <article class="premium-card rounded-[2rem] p-6">
-        <div class="mb-6 aspect-[4/3] rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-white/10 to-black"></div>
-
-        <h2 class="text-2xl font-semibold text-[var(--gold-light)]">
-          Rénovation d’optiques
-        </h2>
-
-        <p class="mt-4 leading-relaxed text-white/70">
-          Phares ternis rénovés par polissage et protection durable par vernissage.
-        </p>
-      </article>
-
-      <article class="premium-card rounded-[2rem] p-6">
-        <div class="mb-6 aspect-[4/3] rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-white/10 to-black"></div>
-
-        <h2 class="text-2xl font-semibold text-[var(--gold-light)]">
-          Protection carrosserie
-        </h2>
-
-        <p class="mt-4 leading-relaxed text-white/70">
-          Cire carnauba ou traitement céramique pour protéger durablement l’éclat.
-        </p>
-      </article>
+      <p class="mt-5 text-lg leading-relaxed text-white/65">
+        Les optiques ternies ou jaunies nuisent à l’esthétique et à la visibilité.
+        Une rénovation permet de retrouver transparence et netteté.
+      </p>
     </div>
 
-    <div class="mt-10 rounded-[2rem] border border-[var(--gold)]/30 bg-black/50 p-6 text-center md:p-10">
-      <p class="text-lg leading-relaxed text-white/75">
-        Les premières réalisations pourront être ajoutées progressivement avec des photos
-        fournies par le client : avant/après, gros plans de carrosserie, phares rénovés,
-        véhicules protégés ou vitres teintées.
-      </p>
+    <div class="grid gap-8">
+      {optiques.map((item, index) => (
+        <article
+          class={`home-glow-card overflow-hidden rounded-[2.5rem] p-5 md:p-6 ${
+            index % 2 === 0 ? "slide-right" : "slide-left"
+          }`}
+        >
+          <div class="mb-5 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <p class="service-number">OPTIQUE 0{index + 1}</p>
+              <h3 class="mt-2 text-2xl font-semibold text-[var(--gold-light)] md:text-3xl">
+                {item.title}
+              </h3>
+            </div>
+
+            <span class="rounded-full border border-[var(--gold)]/40 bg-[var(--gold)]/10 px-4 py-2 text-sm text-[var(--gold-light)]">
+              Avant / Après
+            </span>
+          </div>
+
+          <div class="grid gap-4 md:grid-cols-2">
+            <div class="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-black/40">
+              <span class="absolute left-4 top-4 z-10 rounded-full bg-black/75 px-4 py-2 text-sm font-semibold text-white backdrop-blur">
+                Avant
+              </span>
+
+              <img
+                src={item.before}
+                alt={`${item.title} avant`}
+                class="aspect-[4/3] w-full object-cover transition duration-700 hover:scale-105"
+              />
+            </div>
+
+            <div class="relative overflow-hidden rounded-[1.5rem] border border-[var(--gold)]/40 bg-black/40">
+              <span class="absolute left-4 top-4 z-10 rounded-full bg-[var(--gold)] px-4 py-2 text-sm font-semibold text-black">
+                Après
+              </span>
+
+              <img
+                src={item.after}
+                alt={`${item.title} après`}
+                class="aspect-[4/3] w-full object-cover transition duration-700 hover:scale-105"
+              />
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- ETAPES OPTIQUES -->
+  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-20">
+    <div class="home-glow-card zoom-in rounded-[2.5rem] p-6 md:p-10">
+      <div class="mb-8 max-w-3xl">
+        <p class="text-sm uppercase tracking-[0.35em] text-[var(--gold-light)]">
+          Méthode
+        </p>
+
+        <h2 class="mt-4 text-4xl font-semibold md:text-5xl">
+          Les étapes d’une rénovation d’optique.
+        </h2>
+
+        <p class="mt-5 text-lg leading-relaxed text-white/65">
+          Une rénovation propre repose sur une progression maîtrisée :
+          préparation, ponçage, polissage puis protection.
+        </p>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {etapesOptiques.map((item, index) => (
+          <article class="fade-in overflow-hidden rounded-[1.5rem] border border-white/10 bg-black/40">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                src={item.image}
+                alt={item.title}
+                class="h-full w-full object-cover transition duration-700 hover:scale-105"
+              />
+            </div>
+
+            <div class="p-4">
+              <p class="service-number">ÉTAPE 0{index + 1}</p>
+
+              <h3 class="mt-2 text-lg font-semibold text-[var(--gold-light)]">
+                {item.title}
+              </h3>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FILMS TEINTÉS -->
+  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-20">
+    <div class="home-glow-card slide-right overflow-hidden rounded-[2.5rem]">
+      <div class="grid gap-0 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch">
+        <div class="relative min-h-[360px] overflow-hidden">
+          <img
+            src="/images/film-teinte.webp"
+            alt="Pose de film teinté sur vitrage"
+            class="h-full min-h-[360px] w-full object-cover transition duration-700 hover:scale-105"
+          />
+
+          <div class="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/50"></div>
+        </div>
+
+        <div class="flex flex-col justify-center p-8 md:p-12">
+          <p class="text-sm uppercase tracking-[0.35em] text-[var(--gold-light)]">
+            Films teintés
+          </p>
+
+          <h2 class="mt-4 text-4xl font-semibold md:text-5xl">
+            Confort, style et protection solaire.
+          </h2>
+
+          <p class="mt-6 text-lg leading-relaxed text-white/70">
+            La pose de films teintés apporte un rendu plus élégant, améliore le confort
+            dans l’habitacle et limite l’exposition solaire.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <span class="rounded-full border border-[var(--gold)]/30 bg-[var(--gold)]/10 px-4 py-2 text-sm text-[var(--gold-light)]">
+              Esthétique
+            </span>
+
+            <span class="rounded-full border border-[var(--gold)]/30 bg-[var(--gold)]/10 px-4 py-2 text-sm text-[var(--gold-light)]">
+              Protection solaire
+            </span>
+
+            <span class="rounded-full border border-[var(--gold)]/30 bg-[var(--gold)]/10 px-4 py-2 text-sm text-[var(--gold-light)]">
+              Confidentialité
+            </span>
+          </div>
+
+          <a
+            href="/contact"
+            class="mt-8 inline-flex w-fit rounded-full border border-[var(--gold)] px-7 py-3 font-semibold text-[var(--gold-light)] hover:bg-[var(--gold)] hover:text-black"
+          >
+            Demander un devis
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
   <ContactCta />
+
+  <ScrollReveal />
 </BaseLayout>

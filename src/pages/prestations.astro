@@ -1,11 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ContactCta from "../components/ContactCta.astro";
+import ScrollReveal from "../components/ScrollReveal.astro";
 
 const prestations = [
   {
+    number: "01",
     title: "Correction de vernis",
     subtitle: "Polissage / Poli-lustrage",
+    image: "/images/vernis.webp",
+    alt: "Correction de vernis automobile",
     text: "La correction de vernis permet de supprimer ou d’atténuer les micro-rayures, hologrammes, traces de lavage et défauts de surface. Le but est de retrouver une carrosserie plus profonde, plus nette et plus brillante.",
     details: [
       "Analyse de l’état du vernis",
@@ -15,20 +19,26 @@ const prestations = [
     ]
   },
   {
+    number: "02",
     title: "Protection carrosserie",
-    subtitle: "Cire carnauba ou traitement céramique",
+    subtitle: "Cire carnauba / Traitement céramique",
+    image: "/images/optique-2-apres.webp",
+    alt: "Protection carrosserie automobile",
     text: "Une protection permet de préserver l’éclat du véhicule et de faciliter son entretien. Selon le besoin, L’art de l’éclat propose une cire de prestige à la carnauba ou une protection céramique longue durée.",
     details: [
-      "Cire de prestige : tenue 6 à 9 mois",
+      "Cire carnauba : tenue 6 à 9 mois",
       "Traitement céramique : garantie 2 à 4 ans",
       "Effet hydrophobe",
       "Brillance renforcée"
     ]
   },
   {
+    number: "03",
     title: "Rénovation d’optiques",
     subtitle: "Polissage et vernissage des phares",
-    text: "Avec le temps, les optiques deviennent ternes, jaunies ou opaques. Une rénovation permet d’améliorer l’esthétique, la visibilité et la sécurité, tout en évitant parfois un remplacement coûteux.",
+    image: "/images/optique-1-apres.webp",
+    alt: "Rénovation d’optique automobile",
+    text: "Avec le temps, les optiques deviennent ternes, jaunies ou opaques. Une rénovation permet d’améliorer l’esthétique du véhicule, la visibilité de nuit et la sécurité.",
     details: [
       "Ponçage progressif",
       "Polissage des optiques",
@@ -37,14 +47,17 @@ const prestations = [
     ]
   },
   {
+    number: "04",
     title: "Films teintés",
     subtitle: "Pose de films haute performance",
+    image: "/images/film-teinte.webp",
+    alt: "Formation pose de films teintés",
     text: "La pose de films teintés améliore le confort, l’esthétique et la protection solaire du véhicule. Elle permet aussi de renforcer la confidentialité à l’intérieur de l’habitacle.",
     details: [
       "Pose soignée",
       "Film haute performance",
       "Garantie 15 ans",
-      "Rendu esthétique et durable"
+      "Confort, style et protection solaire"
     ]
   }
 ];
@@ -54,58 +67,155 @@ const prestations = [
   title="Prestations – L’art de l’éclat"
   description="Correction de vernis, protection carrosserie, rénovation d’optiques et films teintés à Trévé près de Loudéac."
 >
-  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24">
-    <div class="max-w-3xl">
-      <div class="french-line mb-6"></div>
+  <!-- HERO PRESTATIONS -->
+  <section class="relative overflow-hidden">
+    <div class="absolute right-0 top-0 h-80 w-80 rounded-full bg-[var(--gold)]/20 blur-3xl float-slow"></div>
+    <div class="absolute left-0 top-64 h-64 w-64 rounded-full bg-[var(--gold-light)]/10 blur-3xl float-delay"></div>
 
-      <p class="text-sm uppercase tracking-[0.35em] text-[var(--gold-light)]">
-        Prestations
-      </p>
+    <div class="mx-auto grid min-h-[70vh] max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.95fr_1.05fr]">
+      <div class="slide-right">
+        <div class="french-line mb-6"></div>
 
-      <h1 class="mt-4 text-5xl font-semibold leading-tight md:text-7xl">
-        L’exigence du détail,<br />
-        <span class="gold-text">au service de l’éclat.</span>
-      </h1>
+        <p class="text-sm uppercase tracking-[0.35em] text-[var(--gold-light)]">
+          Prestations
+        </p>
 
-      <p class="mt-6 text-lg leading-relaxed text-white/70">
-        L’art de l’éclat accompagne les particuliers et professionnels dans la
-        restauration, la protection et la mise en valeur de leur véhicule.
-      </p>
+        <h1 class="mt-4 text-5xl font-semibold leading-tight md:text-7xl">
+          L’exigence du détail,<br />
+          <span class="gold-text">au service de l’éclat.</span>
+        </h1>
+
+        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-white/70">
+          L’art de l’éclat accompagne les particuliers et professionnels dans la
+          restauration, la protection et la mise en valeur de leur véhicule.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a
+            href="/contact"
+            class="rounded-full bg-[var(--gold)] px-7 py-3.5 font-semibold text-black shadow-lg shadow-yellow-900/30 hover:bg-[var(--gold-light)]"
+          >
+            Demander un devis
+          </a>
+
+          <a
+            href="/realisations"
+            class="rounded-full border border-white/20 px-7 py-3.5 font-semibold text-white hover:border-[var(--gold)] hover:text-[var(--gold-light)]"
+          >
+            Voir les réalisations
+          </a>
+        </div>
+      </div>
+
+      <div class="home-glow-card slide-left overflow-hidden rounded-[2.5rem] p-4 md:p-6">
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="overflow-hidden rounded-[1.5rem] border border-white/10">
+            <img
+              src="/images/vernis.webp"
+              alt="Correction de vernis"
+              class="aspect-[4/3] h-full w-full object-cover"
+            />
+          </div>
+
+          <div class="overflow-hidden rounded-[1.5rem] border border-white/10">
+            <img
+              src="/images/optique-1-apres.webp"
+              alt="Rénovation de phare"
+              class="aspect-[4/3] h-full w-full object-cover"
+            />
+          </div>
+
+          <div class="overflow-hidden rounded-[1.5rem] border border-white/10 sm:col-span-2">
+            <img
+              src="/images/film-teinte.webp"
+              alt="Formation detailing automobile"
+              class="aspect-[16/7] h-full w-full object-cover object-center"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6">
-    <div class="grid gap-8">
+  <!-- INTRO -->
+  <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6 md:py-16">
+    <div class="home-glow-card zoom-in rounded-[2.5rem] p-8 md:p-12">
+      <div class="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-center">
+        <div>
+          <p class="text-sm uppercase tracking-[0.35em] text-[var(--gold-light)]">
+            Méthode
+          </p>
+
+          <h2 class="mt-4 text-4xl font-semibold md:text-5xl">
+            Observer, préparer, corriger, protéger.
+          </h2>
+        </div>
+
+        <p class="text-lg leading-relaxed text-white/70">
+          Chaque véhicule est traité selon son état réel. L’objectif n’est pas
+          simplement de nettoyer, mais de restaurer l’aspect, améliorer la finition,
+          protéger les surfaces et obtenir un rendu durable.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LISTE DES PRESTATIONS -->
+  <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6 md:py-16">
+    <div class="grid gap-10">
       {prestations.map((item, index) => (
-        <article class="premium-card overflow-hidden rounded-[2rem] p-6 md:p-10">
-          <div class="grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-start">
-            <div>
-              <p class="text-sm uppercase tracking-[0.3em] text-white/40">
-                0{index + 1}
+        <article
+          class={`home-glow-card overflow-hidden rounded-[2.5rem] ${
+            index % 2 === 0 ? "slide-right" : "slide-left"
+          }`}
+        >
+          <div
+            class={`grid gap-0 lg:grid-cols-2 ${
+              index % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
+            }`}
+          >
+            <div class="relative min-h-[320px] overflow-hidden">
+              <img
+                src={item.image}
+                alt={item.alt}
+                class="h-full min-h-[320px] w-full object-cover transition duration-700 hover:scale-105"
+              />
+
+              <div class="absolute left-5 top-5 rounded-full border border-[var(--gold)]/40 bg-black/75 px-4 py-2 text-sm font-semibold text-[var(--gold-light)] backdrop-blur">
+                {item.number}
+              </div>
+            </div>
+
+            <div class="flex flex-col justify-center p-8 md:p-12">
+              <p class="service-number">
+                {item.subtitle}
               </p>
 
-              <h2 class="mt-3 text-3xl font-semibold text-[var(--gold-light)] md:text-4xl">
+              <h2 class="mt-3 text-4xl font-semibold text-[var(--gold-light)]">
                 {item.title}
               </h2>
 
-              <p class="mt-2 text-lg text-white/80">
-                {item.subtitle}
-              </p>
-            </div>
-
-            <div>
-              <p class="text-lg leading-relaxed text-white/75">
+              <p class="mt-6 text-lg leading-relaxed text-white/70">
                 {item.text}
               </p>
 
-              <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+              <ul class="mt-8 grid gap-3 sm:grid-cols-2">
                 {item.details.map((detail) => (
-                  <li class="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-white/75">
+                  <li class="fade-in rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white/75">
                     <span class="mr-2 text-[var(--gold-light)]">•</span>
                     {detail}
                   </li>
                 ))}
               </ul>
+
+              <div class="mt-8">
+                <a
+                  href="/contact"
+                  class="inline-flex rounded-full border border-[var(--gold)] px-6 py-3 font-semibold text-[var(--gold-light)] hover:bg-[var(--gold)] hover:text-black"
+                >
+                  Demander un devis
+                </a>
+              </div>
             </div>
           </div>
         </article>
@@ -113,5 +223,53 @@ const prestations = [
     </div>
   </section>
 
+  <!-- BLOC FORMATION -->
+  <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6 md:py-16">
+    <div class="home-glow-card zoom-in overflow-hidden rounded-[2.5rem]">
+      <div class="grid gap-0 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+        <div class="p-8 md:p-12">
+          <p class="text-sm uppercase tracking-[0.35em] text-[var(--gold-light)]">
+            Savoir-faire
+          </p>
+
+          <h2 class="mt-4 text-4xl font-semibold md:text-5xl">
+            Une formation technique pour un rendu professionnel.
+          </h2>
+
+          <p class="mt-6 text-lg leading-relaxed text-white/70">
+            Le detailing demande méthode, précision et maîtrise des produits.
+            La formation suivie permet d’intervenir avec soin sur la carrosserie,
+            les optiques, les protections et la pose de films.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <span class="rounded-full border border-[var(--gold)]/30 bg-[var(--gold)]/10 px-4 py-2 text-sm text-[var(--gold-light)]">
+              Detailing automobile
+            </span>
+
+            <span class="rounded-full border border-[var(--gold)]/30 bg-[var(--gold)]/10 px-4 py-2 text-sm text-[var(--gold-light)]">
+              Vitres teintées
+            </span>
+
+            <span class="rounded-full border border-[var(--gold)]/30 bg-[var(--gold)]/10 px-4 py-2 text-sm text-[var(--gold-light)]">
+              Finition premium
+            </span>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center bg-black/40 p-4 md:p-6">
+          <img
+            src="/images/diplome-formation-detailing.webp"
+            alt="Formation detailing automobile"
+            class="h-auto max-h-[520px] w-full object-contain"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
   <ContactCta />
+
+  <ScrollReveal />
 </BaseLayout>

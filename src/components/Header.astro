@@ -1,25 +1,149 @@
-<header class="sticky top-0 z-50 border-b border-white/10 bg-black/75 backdrop-blur-xl">
-  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
-    <a href="/" class="flex items-center gap-3">
+<header class="sticky top-0 z-50 border-b border-white/10 bg-black/85 backdrop-blur-xl">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6">
+    <!-- LOGO -->
+    <a href="/" class="flex items-center">
       <img
-        src="/images/logo-art-eclat.png"
+        src="/images/logo-art-eclat-header.webp"
         alt="L’art de l’éclat"
-        class="h-12 w-auto"
+        class="h-12 w-auto max-w-[220px] object-contain md:h-14 md:max-w-[280px]"
       />
     </a>
 
-    <nav class="hidden items-center gap-7 text-sm text-white/80 md:flex">
-      <a href="/" class="hover:text-[var(--gold-light)]">Accueil</a>
-      <a href="/prestations" class="hover:text-[var(--gold-light)]">Prestations</a>
-      <a href="/realisations" class="hover:text-[var(--gold-light)]">Réalisations</a>
-      <a href="/a-propos" class="hover:text-[var(--gold-light)]">À propos</a>
-      <a href="/contact" class="rounded-full border border-[var(--gold)] px-5 py-2 text-[var(--gold-light)] hover:bg-[var(--gold)] hover:text-black">
-        Demander un devis
+    <!-- MENU DESKTOP -->
+    <nav class="hidden items-center gap-6 text-sm text-white/80 md:flex">
+      <a href="/" class="transition hover:text-[var(--gold-light)]">Accueil</a>
+      <a href="/prestations" class="transition hover:text-[var(--gold-light)]">Prestations</a>
+      <a href="/realisations" class="transition hover:text-[var(--gold-light)]">Réalisations</a>
+      <a href="/a-propos" class="transition hover:text-[var(--gold-light)]">À propos</a>
+      <a
+        href="/contact"
+        class="rounded-full border border-[var(--gold)] px-5 py-2 text-[var(--gold-light)] transition hover:bg-[var(--gold)] hover:text-black"
+      >
+        Devis
       </a>
     </nav>
 
-    <a href="/contact" class="rounded-full border border-[var(--gold)] px-4 py-2 text-sm text-[var(--gold-light)] md:hidden">
-      Devis
-    </a>
+    <!-- BOUTON MOBILE -->
+    <button
+      id="mobile-menu-button"
+      type="button"
+      class="relative z-[70] flex h-11 w-11 items-center justify-center rounded-full border border-[var(--gold)]/50 bg-black/50 text-[var(--gold-light)] md:hidden"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false"
+    >
+      <span class="burger-line burger-line-1"></span>
+      <span class="burger-line burger-line-2"></span>
+      <span class="burger-line burger-line-3"></span>
+    </button>
   </div>
+
+  <!-- OVERLAY MOBILE -->
+  <div
+    id="mobile-menu-overlay"
+    class="fixed inset-0 z-[60] hidden bg-black/70 backdrop-blur-sm md:hidden"
+  ></div>
+
+  <!-- MENU MOBILE -->
+  <nav
+    id="mobile-menu"
+    class="fixed right-4 top-20 z-[65] hidden w-[calc(100%-2rem)] max-w-sm overflow-hidden rounded-[2rem] border border-[var(--gold)]/35 bg-black/95 shadow-2xl shadow-black/70 md:hidden"
+  >
+    <div class="relative overflow-hidden p-6">
+      <div class="absolute right-0 top-0 h-40 w-40 rounded-full bg-[var(--gold)]/20 blur-3xl"></div>
+
+      <div class="relative">
+        <p class="mb-5 text-xs uppercase tracking-[0.35em] text-[var(--gold-light)]">
+          Menu
+        </p>
+
+        <div class="flex flex-col gap-2 text-lg font-semibold">
+          <a href="/" class="mobile-menu-link rounded-2xl px-4 py-3 text-white/85 transition hover:bg-white/5 hover:text-[var(--gold-light)]">
+            Accueil
+          </a>
+
+          <a href="/prestations" class="mobile-menu-link rounded-2xl px-4 py-3 text-white/85 transition hover:bg-white/5 hover:text-[var(--gold-light)]">
+            Prestations
+          </a>
+
+          <a href="/realisations" class="mobile-menu-link rounded-2xl px-4 py-3 text-white/85 transition hover:bg-white/5 hover:text-[var(--gold-light)]">
+            Réalisations
+          </a>
+
+          <a href="/a-propos" class="mobile-menu-link rounded-2xl px-4 py-3 text-white/85 transition hover:bg-white/5 hover:text-[var(--gold-light)]">
+            À propos
+          </a>
+        </div>
+
+        <div class="mt-6 border-t border-white/10 pt-6">
+          <a
+            href="/contact"
+            class="mobile-menu-link flex w-full items-center justify-center rounded-full bg-[var(--gold)] px-6 py-3 font-semibold text-black transition hover:bg-[var(--gold-light)]"
+          >
+            Demander un devis
+          </a>
+
+          <a
+            href="tel:0780034686"
+            class="mobile-menu-link mt-3 flex w-full items-center justify-center rounded-full border border-white/15 px-6 py-3 font-semibold text-white transition hover:border-[var(--gold)] hover:text-[var(--gold-light)]"
+          >
+            Appeler
+          </a>
+        </div>
+
+        <div class="mt-6 text-sm leading-relaxed text-white/45">
+          L’art de l’éclat<br />
+          Expert detailing automobile à Trévé
+        </div>
+      </div>
+    </div>
+  </nav>
 </header>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const button = document.getElementById("mobile-menu-button");
+    const menu = document.getElementById("mobile-menu");
+    const overlay = document.getElementById("mobile-menu-overlay");
+    const links = document.querySelectorAll(".mobile-menu-link");
+
+    if (!button || !menu || !overlay) return;
+
+    const openMenu = () => {
+      menu.classList.remove("hidden");
+      overlay.classList.remove("hidden");
+      document.body.classList.add("mobile-menu-open");
+      button.setAttribute("aria-expanded", "true");
+      button.classList.add("is-open");
+    };
+
+    const closeMenu = () => {
+      menu.classList.add("hidden");
+      overlay.classList.add("hidden");
+      document.body.classList.remove("mobile-menu-open");
+      button.setAttribute("aria-expanded", "false");
+      button.classList.remove("is-open");
+    };
+
+    const toggleMenu = () => {
+      const isOpen = button.classList.contains("is-open");
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    };
+
+    button.addEventListener("click", toggleMenu);
+    overlay.addEventListener("click", closeMenu);
+
+    links.forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    });
+  });
+</script>

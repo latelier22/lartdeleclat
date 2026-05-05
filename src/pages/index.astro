@@ -220,55 +220,126 @@ const values = [
       </div>
     </section>
 
-    <!-- BANDE AVANT / APRÈS -->
-    <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6 md:py-16">
-      <div class="home-glow-card zoom-in rounded-[2.5rem] p-8 md:p-12">
-        <div class="grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-center">
-          <div>
-            <p class="text-sm uppercase tracking-[0.35em] text-[var(--gold-light)]">
-              Réalisations
-            </p>
+<!-- APERÇU RÉALISATIONS -->
+<section class="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20">
+  <div class="mb-10 max-w-3xl fade-in">
+    <p class="text-sm uppercase tracking-[0.35em] text-[var(--gold-light)]">
+      Réalisations
+    </p>
 
-            <h2 class="mt-4 text-4xl font-semibold">
-              Montrer la transformation.
-            </h2>
-          </div>
+    <h2 class="mt-4 text-4xl font-semibold md:text-5xl">
+      Des résultats visibles dès le premier regard.
+    </h2>
 
-          <div>
-            <p class="text-lg leading-relaxed text-white/70">
-              La page réalisations pourra accueillir les photos avant/après :
-              carrosserie corrigée, phares rénovés, véhicules protégés, vitres teintées.
-            </p>
+    <p class="mt-5 text-lg leading-relaxed text-white/65">
+      Correction de vernis, rénovation d’optiques et finitions premium :
+      chaque intervention vise un résultat net, durable et soigné.
+    </p>
+  </div>
 
-            <div class="mt-7">
-              <a
-                href="/realisations"
-                class="inline-flex rounded-full border border-[var(--gold)] px-7 py-3 font-semibold text-[var(--gold-light)] hover:bg-[var(--gold)] hover:text-black"
-              >
-                Voir les réalisations
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-10 grid gap-4 md:grid-cols-3">
-          <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5 fade-in">
-            <p class="text-[var(--gold-light)]">Avant</p>
-            <p class="mt-2 text-white/60">Vernis terne, micro-rayures, optiques opaques.</p>
-          </div>
-
-          <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5 fade-in">
-            <p class="text-[var(--gold-light)]">Intervention</p>
-            <p class="mt-2 text-white/60">Préparation, correction, finition et protection.</p>
-          </div>
-
-          <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5 fade-in">
-            <p class="text-[var(--gold-light)]">Après</p>
-            <p class="mt-2 text-white/60">Brillance, profondeur, protection et rendu premium.</p>
-          </div>
-        </div>
+  <div class="grid gap-6 md:grid-cols-2">
+    <a
+      href="/realisations"
+      class="home-glow-card slide-right group overflow-hidden rounded-[2rem]"
+    >
+      <div class="aspect-[4/3] overflow-hidden">
+        <img
+          src="/images/vernis.webp"
+          alt="Correction de vernis automobile"
+          class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+        />
       </div>
-    </section>
+
+      <div class="p-6">
+        <p class="service-number">VERNIS</p>
+        <h3 class="mt-3 text-2xl font-semibold text-[var(--gold-light)]">
+          Brillance retrouvée
+        </h3>
+        <p class="mt-4 text-white/65">
+          Travail de correction pour retrouver profondeur, éclat et finition.
+        </p>
+      </div>
+    </a>
+
+    <a
+      href="/realisations"
+      class="home-glow-card slide-left group overflow-hidden rounded-[2rem]"
+    >
+      <div class="aspect-[4/3] overflow-hidden">
+        <img
+          src="/images/optique-1-apres.webp"
+          alt="Rénovation d’optique automobile"
+          class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+        />
+      </div>
+
+      <div class="p-6">
+        <p class="service-number">OPTIQUES</p>
+        <h3 class="mt-3 text-2xl font-semibold text-[var(--gold-light)]">
+          Phares rénovés
+        </h3>
+        <p class="mt-4 text-white/65">
+          Transparence, sécurité et esthétique grâce à une rénovation soignée.
+        </p>
+      </div>
+    </a>
+  </div>
+</section>
+<!-- FORMATION / DIPLÔMES -->
+<section class="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20">
+  <div class="home-glow-card zoom-in overflow-hidden rounded-[2.5rem]">
+    <div class="grid gap-0 lg:grid-cols-[0.75fr_1.25fr] lg:items-stretch">
+      
+      <div class="relative z-10 flex flex-col justify-center border-b border-white/10 bg-black/80 p-8 md:p-12 lg:border-b-0 lg:border-r">
+        <p class="text-sm uppercase tracking-[0.35em] text-[var(--gold-light)]">
+          Formation & savoir-faire
+        </p>
+
+        <h2 class="mt-4 text-4xl font-semibold md:text-5xl">
+          Des compétences techniques au service du résultat.
+        </h2>
+
+        <p class="mt-6 text-lg leading-relaxed text-white/70">
+          Jérémy Martin a suivi une formation professionnelle en detailing automobile.
+          Cette base technique permet d’intervenir avec méthode sur la préparation,
+          la rénovation, la correction et la finition des véhicules.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <span class="rounded-full border border-[var(--gold)]/30 bg-[var(--gold)]/10 px-4 py-2 text-sm text-[var(--gold-light)]">
+            Detailing automobile
+          </span>
+
+          <span class="rounded-full border border-[var(--gold)]/30 bg-[var(--gold)]/10 px-4 py-2 text-sm text-[var(--gold-light)]">
+            Pose de films teintés
+          </span>
+
+          <span class="rounded-full border border-[var(--gold)]/30 bg-[var(--gold)]/10 px-4 py-2 text-sm text-[var(--gold-light)]">
+            Finition premium
+          </span>
+        </div>
+
+        <a
+          href="/a-propos"
+          class="mt-8 inline-flex w-fit rounded-full border border-[var(--gold)] px-7 py-3 font-semibold text-[var(--gold-light)] hover:bg-[var(--gold)] hover:text-black"
+        >
+          Découvrir le savoir-faire
+        </a>
+      </div>
+
+      <a
+        href="/a-propos"
+        class="group flex min-h-[360px] items-center justify-center bg-black/40 p-4 md:min-h-[460px] md:p-6"
+      >
+        <img
+          src="/images/diplome-formation-detailing.webp"
+          alt="Formation detailing automobile - Jérémy Martin"
+          class="h-auto max-h-[520px] w-full object-contain transition duration-700 group-hover:scale-[1.02]"
+        />
+      </a>
+    </div>
+  </div>
+</section>
 
     <!-- CTA FINAL -->
     <ContactCta />
