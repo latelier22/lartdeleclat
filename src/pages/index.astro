@@ -50,7 +50,7 @@ const values = [
       <div class="absolute right-0 top-0 h-80 w-80 rounded-full bg-[var(--gold)]/20 blur-3xl float-slow"></div>
       <div class="absolute left-0 top-64 h-64 w-64 rounded-full bg-[var(--gold-light)]/10 blur-3xl float-delay"></div>
 
-      <div class="mx-auto grid min-h-[calc(100vh-80px)] max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1fr_0.95fr]">
+      <div class="mx-auto grid min-h-[50vh] max-w-7xl items-center gap-10 px-4 py-10 sm:px-6 md:py-14 lg:grid-cols-[1fr_0.95fr]">
         <div class="slide-right">
           <div class="french-line mb-6"></div>
 
@@ -59,7 +59,7 @@ const values = [
             Expert detailing automobile
           </div>
 
-          <h1 class="mt-6 text-4xl font-semibold leading-tight sm:text-5xl lg:text-7xl">
+          <h1 class="mt-6 text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
             Restaurer,<br />
             protéger,<br />
             <span class="gold-text">sublimer.</span>
@@ -95,18 +95,119 @@ const values = [
         <div class="relative slide-left">
           <div class="absolute -inset-5 rounded-[2.5rem] bg-[var(--gold)]/20 blur-3xl"></div>
 
-          <div class="home-glow-card relative rounded-[2.5rem] p-4 md:p-6">
-            <div class="rounded-[2rem] border border-white/10 bg-black/55 p-4 md:p-6">
+          <div class="relative home-glow-card rounded-[2.5rem]">
+            
               <img
                 src="/images/logo-art-eclat-hero.webp"
                 alt="L’art de l’éclat"
                 class="mx-auto w-full object-contain"
-              />
-            </div>
+             />
+            
           </div>
         </div>
       </div>
     </section>
+
+        <!-- PRESTATION À VENIR : FORFAIT BLINDAGE -->
+<section class="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20">
+  <div class="home-glow-card zoom-in overflow-hidden rounded-[2.5rem]">
+    <div class="grid gap-0 lg:grid-cols-[0.9fr_1.1fr] lg:items-stretch">
+      
+      <!-- TEXTE -->
+      <div class="flex flex-col justify-center p-8 md:p-12">
+        <div class="mb-5 inline-flex w-fit rounded-full border border-[var(--gold)]/40 bg-[var(--gold)]/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-[var(--gold-light)]">
+          Bientôt disponible
+        </div>
+
+        <p class="text-sm uppercase tracking-[0.35em] text-white/45">
+          Nouvelle prestation
+        </p>
+
+        <h2 class="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
+          Forfait <span class="gold-text">Blindage</span><br />
+          pour optiques.
+        </h2>
+
+        <p class="mt-6 text-lg leading-relaxed text-white/70">
+          Une rénovation ultime des phares, pensée pour remplacer le vernissage
+          par la pose d’un film de protection transparent appelé <strong class="text-[var(--gold-light)]">PPF</strong>.
+        </p>
+
+        <div class="mt-8 grid gap-3 sm:grid-cols-2">
+          <div class="rounded-2xl border border-white/10 bg-black/30 p-4">
+            <p class="text-sm uppercase tracking-[0.2em] text-[var(--gold-light)]">
+              Durabilité
+            </p>
+            <p class="mt-2 text-white/75">
+              Garantie jusqu’à 10 ans
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-black/30 p-4">
+            <p class="text-sm uppercase tracking-[0.2em] text-[var(--gold-light)]">
+              Contrôle
+            </p>
+            <p class="mt-2 text-white/75">
+              Visite annuelle offerte
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <div class="rounded-full bg-[var(--gold)] px-6 py-3 font-bold text-black">
+            120 €
+          </div>
+
+          <p class="text-sm text-white/50">
+            Prestation bientôt en phase de test.
+          </p>
+        </div>
+
+        <a
+          href="/contact"
+          class="mt-8 inline-flex w-fit rounded-full border border-[var(--gold)] px-7 py-3 font-semibold text-[var(--gold-light)] hover:bg-[var(--gold)] hover:text-black"
+        >
+          Me prévenir / demander des infos
+        </a>
+      </div>
+
+      <!-- VISUEL -->
+      <div class="relative min-h-[360px] overflow-hidden border-t border-white/10 bg-black/50 lg:border-l lg:border-t-0">
+        <div class="ppf-slider h-full min-h-[360px]">
+  <img
+    src="/images/ppf-1.webp"
+    alt="Pose de film PPF sur optique - étape 1"
+    class="ppf-slide is-active"
+  />
+
+  <img
+    src="/images/ppf-2.webp"
+    alt="Pose de film PPF sur optique - étape 2"
+    class="ppf-slide"
+  />
+
+  <img
+    src="/images/ppf-3.webp"
+    alt="Pose de film PPF sur optique - étape 3"
+    class="ppf-slide"
+  />
+</div>
+
+        <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent lg:bg-gradient-to-l"></div>
+
+        <div class="absolute bottom-6 left-6 right-6 rounded-[1.5rem] border border-[var(--gold)]/35 bg-black/70 p-5 backdrop-blur">
+          <p class="text-sm uppercase tracking-[0.25em] text-[var(--gold-light)]">
+            PPF transparent
+          </p>
+
+          <p class="mt-2 text-lg font-semibold text-white">
+            Une protection physique contre les agressions extérieures.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- BLOCS RAPIDES -->
     <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 md:py-14">
@@ -188,13 +289,17 @@ const values = [
     <!-- IMAGE + TEXTE -->
     <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6 md:py-16">
       <div class="grid gap-8 lg:grid-cols-2 lg:items-stretch">
-        <ScrollBlurImage
-          src="/images/logo-art-eclat.webp"
+        <div class="relative home-glow-card rounded-[2.5rem]">
+            
+             
+          <ScrollBlurImage
+          src="/images/logo-art-eclat-hero.webp"
           alt="Logo L’art de l’éclat"
           className="min-h-[360px]"
           imageClass="min-h-[360px]"
-        />
-
+          />
+        </div>
+          
         <div class="home-glow-card slide-left flex flex-col justify-center rounded-[2.5rem] p-8 md:p-10">
           <p class="text-sm uppercase tracking-[0.35em] text-[var(--gold-light)]">
             Savoir-faire
@@ -219,6 +324,8 @@ const values = [
         </div>
       </div>
     </section>
+
+
 
 <!-- APERÇU RÉALISATIONS -->
 <section class="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20">
@@ -344,6 +451,21 @@ const values = [
     <!-- CTA FINAL -->
     <ContactCta />
   </main>
+
+  <script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".ppf-slide");
+    if (!slides.length) return;
+
+    let current = 0;
+
+    setInterval(() => {
+      slides[current].classList.remove("is-active");
+      current = (current + 1) % slides.length;
+      slides[current].classList.add("is-active");
+    }, 3200);
+  });
+</script>
 
   <ScrollReveal />
 </BaseLayout>
