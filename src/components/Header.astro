@@ -1,5 +1,18 @@
-<header class="sticky top-0 z-50 border-b border-white/10 bg-black/85 backdrop-blur-xl">
-  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6">
+---
+const currentPath = Astro.url.pathname;
+
+const isActive = (path) => {
+  if (path === "/") return currentPath === "/";
+  return currentPath.startsWith(path);
+};
+---
+
+<header
+  class="sticky top-0 z-50 border-b border-white/10 bg-black/85 backdrop-blur-xl"
+>
+  <div
+    class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6"
+  >
     <!-- LOGO -->
     <a href="/" class="flex items-center">
       <img
@@ -11,13 +24,52 @@
 
     <!-- MENU DESKTOP -->
     <nav class="hidden items-center gap-6 text-sm text-white/80 md:flex">
-      <a href="/" class="transition hover:text-[var(--gold-light)]">Accueil</a>
-      <a href="/prestations" class="transition hover:text-[var(--gold-light)]">Prestations</a>
-      <a href="/realisations" class="transition hover:text-[var(--gold-light)]">Réalisations</a>
-      <a href="/a-propos" class="transition hover:text-[var(--gold-light)]">À propos</a>
+      <a
+        href="/"
+        class:list={[
+          "transition hover:text-[var(--gold-light)]",
+          isActive("/") && "is-active",
+        ]}
+      >
+        Accueil
+      </a>
+
+      <a
+        href="/prestations"
+        class:list={[
+          "transition hover:text-[var(--gold-light)]",
+          isActive("/prestations") && "is-active",
+        ]}
+      >
+        Prestations
+      </a>
+
+      <a
+        href="/realisations"
+        class:list={[
+          "transition hover:text-[var(--gold-light)]",
+          isActive("/realisations") && "is-active",
+        ]}
+      >
+        Réalisations
+      </a>
+
+      <a
+        href="/a-propos"
+        class:list={[
+          "transition hover:text-[var(--gold-light)]",
+          isActive("/a-propos") && "is-active",
+        ]}
+      >
+        À propos
+      </a>
+
       <a
         href="/contact"
-        class="rounded-full border border-[var(--gold)] px-5 py-2 text-[var(--gold-light)] transition hover:bg-[var(--gold)] hover:text-black"
+        class:list={[
+          "rounded-full border border-[var(--gold)] px-5 py-2 text-[var(--gold-light)] transition hover:bg-[var(--gold)] hover:text-black",
+          isActive("/contact") && "is-active-button",
+        ]}
       >
         Devis
       </a>
@@ -41,7 +93,8 @@
   <div
     id="mobile-menu-overlay"
     class="fixed inset-0 z-[60] hidden bg-black/70 backdrop-blur-sm md:hidden"
-  ></div>
+  >
+  </div>
 
   <!-- MENU MOBILE -->
   <nav
@@ -49,27 +102,52 @@
     class="fixed right-4 top-20 z-[65] hidden w-[calc(100%-2rem)] max-w-sm overflow-hidden rounded-[2rem] border border-[var(--gold)]/35 bg-black/95 shadow-2xl shadow-black/70 md:hidden"
   >
     <div class="relative overflow-hidden p-6">
-      <div class="absolute right-0 top-0 h-40 w-40 rounded-full bg-[var(--gold)]/20 blur-3xl"></div>
+      <div
+        class="absolute right-0 top-0 h-40 w-40 rounded-full bg-[var(--gold)]/20 blur-3xl"
+      >
+      </div>
 
       <div class="relative">
-        <p class="mb-5 text-xs uppercase tracking-[0.35em] text-[var(--gold-light)]">
+        <p
+          class="mb-5 text-xs uppercase tracking-[0.35em] text-[var(--gold-light)]"
+        >
           Menu
         </p>
 
         <div class="flex flex-col gap-2 text-lg font-semibold">
-          <a href="/" class="mobile-menu-link rounded-2xl px-4 py-3 text-white/85 transition hover:bg-white/5 hover:text-[var(--gold-light)]">
+          <a
+            href="/"
+            class:list={[
+    "mobile-menu-link rounded-2xl px-4 py-3 text-white/85 transition hover:bg-white/5 hover:text-[var(--gold-light)]",
+    isActive("/") && "is-active-mobile"
+  ]}>
             Accueil
           </a>
 
-          <a href="/prestations" class="mobile-menu-link rounded-2xl px-4 py-3 text-white/85 transition hover:bg-white/5 hover:text-[var(--gold-light)]">
+          <a
+            href="/prestations"
+            class:list={[
+    "mobile-menu-link rounded-2xl px-4 py-3 text-white/85 transition hover:bg-white/5 hover:text-[var(--gold-light)]",
+    isActive("/prestations") && "is-active-mobile"
+  ]}>
             Prestations
           </a>
 
-          <a href="/realisations" class="mobile-menu-link rounded-2xl px-4 py-3 text-white/85 transition hover:bg-white/5 hover:text-[var(--gold-light)]">
+          <a
+            href="/realisations"
+            class:list={[
+    "mobile-menu-link rounded-2xl px-4 py-3 text-white/85 transition hover:bg-white/5 hover:text-[var(--gold-light)]",
+    isActive("/realisations") && "is-active-mobile"
+  ]}>
             Réalisations
           </a>
 
-          <a href="/a-propos" class="mobile-menu-link rounded-2xl px-4 py-3 text-white/85 transition hover:bg-white/5 hover:text-[var(--gold-light)]">
+          <a
+            href="/a-propos"
+            class:list={[
+    "mobile-menu-link rounded-2xl px-4 py-3 text-white/85 transition hover:bg-white/5 hover:text-[var(--gold-light)]",
+    isActive("/a-propos") && "is-active-mobile"
+  ]}>
             À propos
           </a>
         </div>
@@ -77,15 +155,19 @@
         <div class="mt-6 border-t border-white/10 pt-6">
           <a
             href="/contact"
-            class="mobile-menu-link flex w-full items-center justify-center rounded-full bg-[var(--gold)] px-6 py-3 font-semibold text-black transition hover:bg-[var(--gold-light)]"
-          >
+            class:list={[
+    "mobile-menu-link flex w-full items-center justify-center rounded-full bg-[var(--gold)] px-6 py-3 font-semibold text-black transition hover:bg-[var(--gold-light)]",
+    isActive("/contact") && "is-active-mobile"
+  ]}>
             Demander un devis
           </a>
 
           <a
             href="tel:0780034686"
-            class="mobile-menu-link mt-3 flex w-full items-center justify-center rounded-full border border-white/15 px-6 py-3 font-semibold text-white transition hover:border-[var(--gold)] hover:text-[var(--gold-light)]"
-          >
+            class:list={[
+    "mobile-menu-link mt-3 flex w-full items-center justify-center rounded-full border border-white/15 px-6 py-3 font-semibold text-white transition hover:border-[var(--gold)] hover:text-[var(--gold-light)]",
+    isActive("/contact") && "is-active-mobile"
+  ]}>
             Appeler
           </a>
         </div>

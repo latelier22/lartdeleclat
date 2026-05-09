@@ -1,23 +1,41 @@
 @import "tailwindcss";
 
+/* =========================================================
+   1. VARIABLES GLOBALES
+========================================================= */
+
 :root {
   --black-deep: #050505;
   --black-soft: #111111;
+
   --gold: #d6a23f;
   --gold-light: #f4d27a;
+
   --cream: #f7f1e4;
   --muted: #b8b0a2;
+
+  --fr-blue: #0055a4;
+  --fr-white: #ffffff;
+  --fr-red: #ef4135;
 }
+
+/* =========================================================
+   2. BASE / FOND GLOBAL CARBONE
+========================================================= */
 
 html {
   scroll-behavior: smooth;
+  background: #020202;
 }
+
 body {
   margin: 0;
   color: var(--cream);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   background-color: #020202;
+
+  /* Fond carbone principal */
   background-image:
     radial-gradient(circle at top right, rgba(214, 162, 63, 0.16), transparent 34%),
 
@@ -47,12 +65,14 @@ body {
   background-attachment: fixed;
 }
 
+/* Surcouche de texture carbone fine */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  pointer-events: none;
   z-index: -1;
+  pointer-events: none;
+
   background:
     repeating-linear-gradient(
       45deg,
@@ -61,10 +81,18 @@ body::before {
       transparent 3px,
       transparent 12px
     );
+
   opacity: 0.65;
 }
 
+/* =========================================================
+   3. IMAGES / UTILITAIRES
+========================================================= */
 
+img {
+  max-width: 100%;
+  display: block;
+}
 
 .gold-text {
   background: linear-gradient(135deg, #9d661c, #f6d47d, #b67b22);
@@ -76,26 +104,402 @@ body::before {
   border: 1px solid rgba(214, 162, 63, 0.45);
 }
 
-.premium-card {
-  background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+.service-number {
+  font-size: 0.85rem;
+  color: rgba(244, 210, 122, 0.75);
+  letter-spacing: 0.25em;
+}
+
+/* =========================================================
+   4. FILETS BLEU BLANC ROUGE
+========================================================= */
+
+/* Filet français principal : plus long, plus fin aux extrémités */
+.french-line {
+  position: relative;
+  width: 180px;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 85, 164, 0.12) 6%,
+    rgba(0, 85, 164, 0.85) 22%,
+    rgba(255, 255, 255, 0.95) 50%,
+    rgba(239, 65, 53, 0.85) 78%,
+    rgba(239, 65, 53, 0.12) 94%,
+    transparent 100%
+  );
+
+  box-shadow:
+    0 0 14px rgba(255,255,255,0.12),
+    0 0 18px rgba(214,162,63,0.10);
+}
+
+/* Effet extrémités plus effilées */
+.french-line::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,0.75) 0%,
+    transparent 12%,
+    transparent 88%,
+    rgba(0,0,0,0.75) 100%
+  );
+}
+
+/* Filet sous les grands titres */
+h1::after,
+h2::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 3px;
+  margin-top: 18px;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 85, 164, 0.16) 7%,
+    rgba(0, 85, 164, 0.78) 24%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgba(239, 65, 53, 0.78) 76%,
+    rgba(239, 65, 53, 0.16) 93%,
+    transparent 100%
+  );
+
+  box-shadow: 0 0 14px rgba(255,255,255,0.10);
+}
+
+/* Pas de filet automatique sur les titres internes des cards */
+.home-glow-card h2::after,
+.home-glow-card h3::after,
+.premium-card h2::after,
+.premium-card h3::after {
+  display: none;
+}
+
+/* =========================================================
+   5. CARTES PREMIUM
+========================================================= */
+
+.premium-card,
+.home-glow-card {
+  position: relative;
+  overflow: hidden;
+
   border: 1px solid rgba(214, 162, 63, 0.28);
-  box-shadow: 0 24px 80px rgba(0,0,0,0.45);
+
+  background:
+    radial-gradient(circle at top right, rgba(244, 210, 122, 0.16), transparent 34%),
+    linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.025));
+
+  box-shadow:
+    0 24px 80px rgba(0,0,0,0.45),
+    inset 0 0 0 1px rgba(255,255,255,0.04);
+
   backdrop-filter: blur(12px);
 }
 
-.french-line {
-  height: 4px;
-  width: 90px;
-  background: linear-gradient(90deg, #0055a4 0 33%, #ffffff 33% 66%, #ef4135 66% 100%);
-  border-radius: 999px;
+/* Filet français discret en haut des cards */
+.premium-card::after,
+.home-glow-card::after {
+  content: "";
+  position: absolute;
+  left: 34px;
+  right: 34px;
+  top: 0;
+  height: 2px;
+  border-radius: 0 0 999px 999px;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 85, 164, 0.08) 8%,
+    rgba(0, 85, 164, 0.70) 24%,
+    rgba(255, 255, 255, 0.88) 50%,
+    rgba(239, 65, 53, 0.70) 76%,
+    rgba(239, 65, 53, 0.08) 92%,
+    transparent 100%
+  );
+
+  opacity: 0.75;
+  pointer-events: none;
 }
 
+/* Effet reflet au hover */
+.home-glow-card::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  pointer-events: none;
 
+  background: linear-gradient(
+    120deg,
+    transparent 35%,
+    rgba(255,255,255,0.14) 48%,
+    rgba(244,210,122,0.18) 50%,
+    transparent 65%
+  );
 
+  transform: translateX(-60%) rotate(8deg);
+  transition: transform 1100ms ease;
+}
 
-/* =========================
-   ANIMATIONS AU SCROLL
-========================= */
+.home-glow-card:hover::before {
+  transform: translateX(60%) rotate(8deg);
+}
+
+/* =========================================================
+   6. CHIPS / BADGES
+========================================================= */
+
+.gold-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  border: 1px solid rgba(214, 162, 63, 0.35);
+  border-radius: 999px;
+
+  background: rgba(214, 162, 63, 0.08);
+  color: var(--gold-light);
+
+  padding: 0.45rem 0.85rem;
+
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Mini drapeau dans certains chips */
+.gold-chip::before {
+  content: "";
+  width: 24px;
+  height: 7px;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--fr-blue) 15%,
+    var(--fr-white) 50%,
+    var(--fr-red) 85%,
+    transparent 100%
+  );
+
+  box-shadow: 0 0 10px rgba(255,255,255,0.16);
+}
+
+.gold-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: var(--gold-light);
+  box-shadow: 0 0 18px rgba(244, 210, 122, 0.8);
+}
+
+/* =========================================================
+   7. BOUTONS / LIENS
+========================================================= */
+
+/* Ligne française au survol des boutons ronds */
+a.rounded-full,
+button.rounded-full {
+  position: relative;
+  overflow: hidden;
+}
+
+a.rounded-full::after,
+button.rounded-full::after {
+  content: "";
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  bottom: 0;
+  height: 2px;
+  border-radius: 999px 999px 0 0;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--fr-blue) 18%,
+    var(--fr-white) 50%,
+    var(--fr-red) 82%,
+    transparent 100%
+  );
+
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+}
+
+a.rounded-full:hover::after,
+button.rounded-full:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================
+   8. MENU DESKTOP
+========================================================= */
+
+nav a {
+  position: relative;
+}
+
+/* Soulignement français discret */
+nav a:not(.rounded-full)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -7px;
+
+  height: 2px;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--fr-blue) 18%,
+    var(--fr-white) 50%,
+    var(--fr-red) 82%,
+    transparent 100%
+  );
+
+  opacity: 0;
+  transform: scaleX(0.45);
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+}
+
+nav a:not(.rounded-full):hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+nav a.is-active {
+  color: var(--gold-light);
+}
+
+nav a.is-active:not(.rounded-full)::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+nav a.is-active-button {
+  background: var(--gold);
+  color: #050505;
+  box-shadow: 0 0 22px rgba(214, 162, 63, 0.22);
+}
+
+/* =========================================================
+   9. MENU MOBILE
+========================================================= */
+
+.mobile-menu-open {
+  overflow: hidden;
+}
+
+/* Bouton burger */
+.burger-line {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--gold-light);
+
+  transition:
+    transform 250ms ease,
+    opacity 250ms ease,
+    top 250ms ease;
+}
+
+.burger-line-1 {
+  top: 15px;
+}
+
+.burger-line-2 {
+  top: 21px;
+}
+
+.burger-line-3 {
+  top: 27px;
+}
+
+#mobile-menu-button.is-open .burger-line-1 {
+  top: 21px;
+  transform: rotate(45deg);
+}
+
+#mobile-menu-button.is-open .burger-line-2 {
+  opacity: 0;
+}
+
+#mobile-menu-button.is-open .burger-line-3 {
+  top: 21px;
+  transform: rotate(-45deg);
+}
+
+/* Menu mobile */
+#mobile-menu {
+  position: fixed;
+  animation: mobileMenuIn 220ms ease-out;
+}
+
+/* Filet français haut du menu mobile */
+#mobile-menu::before {
+  content: "";
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  top: 0;
+
+  height: 3px;
+  border-radius: 0 0 999px 999px;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--fr-blue) 18%,
+    var(--fr-white) 50%,
+    var(--fr-red) 82%,
+    transparent 100%
+  );
+}
+
+.mobile-menu-link.is-active-mobile {
+  color: var(--gold-light);
+  background: rgba(214, 162, 63, 0.10);
+  border: 1px solid rgba(214, 162, 63, 0.22);
+}
+
+@keyframes mobileMenuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================================
+   10. ANIMATIONS AU SCROLL
+========================================================= */
 
 .fade-in,
 .zoom-in,
@@ -135,6 +539,7 @@ body::before {
   filter: blur(0);
 }
 
+/* Flottement décoratif */
 .float-slow {
   animation: floatSlow 7s ease-in-out infinite;
 }
@@ -154,138 +559,55 @@ body::before {
   }
 }
 
-/* =========================
-   BLOCS PREMIUM
-========================= */
+/* =========================================================
+   11. INDICATEUR DE SCROLL
+========================================================= */
 
-.home-glow-card {
+.scroll-indicator {
   position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(214, 162, 63, 0.28);
-  background:
-    radial-gradient(circle at top right, rgba(244, 210, 122, 0.16), transparent 34%),
-    linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.025));
-  box-shadow:
-    0 24px 80px rgba(0,0,0,0.45),
-    inset 0 0 0 1px rgba(255,255,255,0.04);
-  backdrop-filter: blur(12px);
+  width: 18px;
+  height: 30px;
+
+  border: 1px solid rgba(244, 210, 122, 0.65);
+  border-radius: 999px;
 }
 
-.home-glow-card::before {
+.scroll-indicator::before {
   content: "";
   position: absolute;
-  inset: -40%;
-  background: linear-gradient(
-    120deg,
-    transparent 35%,
-    rgba(255,255,255,0.14) 48%,
-    rgba(244,210,122,0.18) 50%,
-    transparent 65%
-  );
-  transform: translateX(-60%) rotate(8deg);
-  transition: transform 1100ms ease;
-  pointer-events: none;
-}
+  top: 6px;
+  left: 50%;
 
-.home-glow-card:hover::before {
-  transform: translateX(60%) rotate(8deg);
-}
-
-.gold-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  border: 1px solid rgba(214, 162, 63, 0.35);
-  background: rgba(214, 162, 63, 0.08);
-  color: var(--gold-light);
+  width: 4px;
+  height: 4px;
   border-radius: 999px;
-  padding: 0.45rem 0.85rem;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
 
-.gold-dot {
-  width: 0.55rem;
-  height: 0.55rem;
-  border-radius: 999px;
   background: var(--gold-light);
-  box-shadow: 0 0 18px rgba(244, 210, 122, 0.8);
+  transform: translateX(-50%);
+
+  animation: scrollDot 1.4s ease-in-out infinite;
 }
 
-.service-number {
-  font-size: 0.85rem;
-  color: rgba(244, 210, 122, 0.75);
-  letter-spacing: 0.25em;
-}
+@keyframes scrollDot {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0);
+  }
 
-@media (prefers-reduced-motion: reduce) {
-  .fade-in,
-  .zoom-in,
-  .slide-left,
-  .slide-right,
-  .float-slow,
-  .float-delay {
+  35% {
     opacity: 1;
-    transform: none;
-    filter: none;
-    animation: none;
-    transition: none;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 12px);
   }
 }
 
-
-
-/* =========================
-   MENU MOBILE
-========================= */
-
-.mobile-menu-open {
-  overflow: hidden;
-}
-
-.burger-line {
-  position: absolute;
-  width: 20px;
-  height: 2px;
-  border-radius: 999px;
-  background: var(--gold-light);
-  transition:
-    transform 250ms ease,
-    opacity 250ms ease,
-    top 250ms ease;
-}
-
-.burger-line-1 {
-  top: 15px;
-}
-
-.burger-line-2 {
-  top: 21px;
-}
-
-.burger-line-3 {
-  top: 27px;
-}
-
-#mobile-menu-button.is-open .burger-line-1 {
-  top: 21px;
-  transform: rotate(45deg);
-}
-
-#mobile-menu-button.is-open .burger-line-2 {
-  opacity: 0;
-}
-
-#mobile-menu-button.is-open .burger-line-3 {
-  top: 21px;
-  transform: rotate(-45deg);
-}
-
-#mobile-menu {
-  animation: mobileMenuIn 220ms ease-out;
-}
-
+/* =========================================================
+   12. SLIDER PPF ANCIEN / COMPATIBILITÉ
+   Garde ce bloc si tu utilises encore .ppf-slider
+========================================================= */
 
 .ppf-slider {
   position: relative;
@@ -295,12 +617,16 @@ body::before {
 .ppf-slide {
   position: absolute;
   inset: 0;
+
   width: 100%;
   height: 100%;
   min-height: 360px;
+
   object-fit: cover;
+
   opacity: 0;
   transform: scale(1.04);
+
   transition:
     opacity 900ms ease,
     transform 2400ms ease;
@@ -311,16 +637,22 @@ body::before {
   transform: scale(1);
 }
 
-@keyframes mobileMenuIn {
-  from {
-    opacity: 0;
-    transform: translateY(-12px) scale(0.96);
-  }
+/* =========================================================
+   13. ACCESSIBILITÉ : RÉDUCTION DES ANIMATIONS
+========================================================= */
 
-  to {
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .zoom-in,
+  .slide-left,
+  .slide-right,
+  .float-slow,
+  .float-delay,
+  .ppf-slide {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: none;
+    filter: none;
+    animation: none;
+    transition: none;
   }
 }
-
-

@@ -3,38 +3,39 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ContactCta from "../components/ContactCta.astro";
 import ScrollReveal from "../components/ScrollReveal.astro";
 import SophroMozaicFlip from "../components/SophroMozaicFlip.astro";
+import AutoImageSlider from "../components/AutoImageSlider.astro";
 
 
 const realisations = [
-  "/images/realisations-00001.jpeg",
-  "/images/realisations-00002.jpeg",
-  "/images/realisations-00003.jpeg",
-  "/images/realisations-00004.jpeg",
-  "/images/realisations-00005.jpeg",
-  "/images/realisations-00006.jpeg",
-  "/images/realisations-00007.jpeg",
-  "/images/realisations-00008.jpeg",
-  "/images/realisations-00009.jpeg",
-  "/images/realisations-00010.jpeg",
-  "/images/realisations-00011.jpeg",
-  "/images/realisations-00012.jpeg",
-  "/images/realisations-00013.jpeg",
-  "/images/realisations-00014.jpeg",
-  "/images/realisations-00015.jpeg",
-  "/images/realisations-00016.jpeg",
-  "/images/realisations-00017.jpeg",
-  "/images/realisations-00018.jpeg",
-  "/images/realisations-00019.jpeg",
-  "/images/realisations-00020.jpeg",
-  "/images/realisations-00021.jpeg",
-  "/images/realisations-00022.jpeg",
-  "/images/realisations-00023.jpeg",
-  "/images/realisations-00024.jpeg",
-  "/images/realisations-00025.jpeg",
-  "/images/realisations-00026.jpeg",
-  "/images/realisations-00027.jpeg",
-  "/images/realisations-00028.jpeg",
-  "/images/realisations-00029.jpeg"
+  "/images/realisations-00001.webp",
+  "/images/realisations-00002.webp",
+  "/images/realisations-00003.webp",
+  "/images/realisations-00004.webp",
+  "/images/realisations-00005.webp",
+  "/images/realisations-00006.webp",
+  "/images/realisations-00007.webp",
+  "/images/realisations-00008.webp",
+  "/images/realisations-00009.webp",
+  "/images/realisations-00010.webp",
+  "/images/realisations-00011.webp",
+  "/images/realisations-00012.webp",
+  "/images/realisations-00013.webp",
+  "/images/realisations-00014.webp",
+  "/images/realisations-00015.webp",
+  "/images/realisations-00016.webp",
+  "/images/realisations-00017.webp",
+  "/images/realisations-00018.webp",
+  "/images/realisations-00019.webp",
+  "/images/realisations-00020.webp",
+  "/images/realisations-00021.webp",
+  "/images/realisations-00022.webp",
+  "/images/realisations-00023.webp",
+  "/images/realisations-00024.webp",
+  "/images/realisations-00025.webp",
+  "/images/realisations-00026.webp",
+  "/images/realisations-00027.webp",
+  "/images/realisations-00028.webp",
+  "/images/realisations-00029.webp"
 ];
 
 const optiques = [
@@ -123,14 +124,24 @@ const etapesOptiques = [
           </a>
         </div>
       </div>
+      <div class="overflow-hidden rounded-[1.5rem] border border-white/10">
+        <AutoImageSlider
+        images={realisations}
+        intervalMs={3000}
+        minHeight="50vh"
+        objectFit="cover"
+        overlay={true}
+        className="h-full"
+        />
+      </div>
 
-       <div class="overflow-hidden rounded-[1.5rem] border border-white/10">
+       <!-- <div class="overflow-hidden rounded-[1.5rem] border border-white/10">
             <img
               src="/images/vernis.webp"
               alt="Correction de vernis automobile"
               class="h-full w-auto object-cover transition duration-700 hover:scale-105"
             />
-          </div>
+          </div> -->
        
          
 

@@ -1,0 +1,253 @@
+<div class="animated-logo" aria-label="Logo animé L’art de l’éclat">
+  <img src="/images/logo-anim/fond.png" alt="" class="logo-layer logo-fond" />
+
+  <img src="/images/logo-anim/chevrons-haut.png" alt="" class="logo-layer logo-chevrons-haut" />
+  <img src="/images/logo-anim/chevron-bas.png" alt="" class="logo-layer logo-chevron-bas" />
+
+  <img src="/images/logo-anim/deco.png" alt="" class="logo-layer logo-voiture" />
+  <img src="/images/logo-anim/titre.png" alt="L’art de l’éclat" class="logo-layer logo-titre" />
+
+  <img src="/images/logo-anim/barre.png" alt="" class="logo-layer logo-barre" />
+
+  <img src="/images/logo-anim/correction-de-vernis.png" alt="Correction de vernis" class="logo-layer logo-service logo-service-1" />
+  <img src="/images/logo-anim/renovation-de-phares.png" alt="Rénovation de phares" class="logo-layer logo-service logo-service-2" />
+  <img src="/images/logo-anim/films-teintes.png" alt="Films teintés" class="logo-layer logo-service logo-service-3" />
+
+  <img src="/images/logo-anim/drapeau.png" alt="" class="logo-layer logo-drapeau" />
+  <img src="/images/logo-anim/etoiles.png" alt="" class="logo-layer logo-etoiles" />
+
+  <span class="logo-light"></span>
+</div>
+
+<style>
+  .animated-logo {
+    position: relative;
+    width: min(100%, 760px);
+    aspect-ratio: 16 / 9;
+    margin-inline: auto;
+    overflow: hidden;
+  }
+
+  .logo-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+  }
+
+  .logo-fond {
+    opacity: 0;
+    animation: logoFadeIn 900ms ease forwards;
+  }
+
+  .logo-chevrons-haut {
+    opacity: 0;
+    transform: translateY(-28px) scale(0.98);
+    animation: logoSlideIn 900ms ease forwards;
+    animation-delay: 300ms;
+  }
+
+  .logo-chevron-bas {
+    opacity: 0;
+    transform: translateY(28px) scale(0.98);
+    animation: logoSlideIn 900ms ease forwards;
+    animation-delay: 500ms;
+  }
+
+  .logo-voiture {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.96);
+    filter: blur(6px);
+    animation: logoRevealSoft 900ms ease forwards;
+    animation-delay: 950ms;
+  }
+
+  .logo-titre {
+    opacity: 0;
+    transform: scale(0.92);
+    filter: blur(8px);
+    animation: logoRevealTitle 1100ms ease forwards;
+    animation-delay: 1300ms;
+  }
+
+  .logo-barre {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    animation: logoDrawLine 750ms ease forwards;
+    animation-delay: 1900ms;
+  }
+
+  .logo-service {
+    opacity: 0;
+    transform: translateX(-24px);
+    animation: logoServiceIn 650ms ease forwards;
+  }
+
+  .logo-service-1 {
+    animation-delay: 2200ms;
+  }
+
+  .logo-service-2 {
+    animation-delay: 2450ms;
+  }
+
+  .logo-service-3 {
+    animation-delay: 2700ms;
+  }
+
+  .logo-drapeau {
+    opacity: 0;
+    transform: translateY(14px) scale(0.94);
+    animation: logoPopIn 650ms ease forwards;
+    animation-delay: 3050ms;
+  }
+
+  .logo-etoiles {
+    opacity: 0;
+    transform: scale(0.7);
+    filter: blur(4px);
+    animation: logoStarsIn 900ms ease forwards;
+    animation-delay: 3300ms;
+  }
+
+  .logo-light {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    background: linear-gradient(
+      115deg,
+      transparent 0%,
+      transparent 38%,
+      rgba(255, 255, 255, 0.18) 46%,
+      rgba(244, 210, 122, 0.45) 50%,
+      rgba(255, 255, 255, 0.18) 54%,
+      transparent 64%,
+      transparent 100%
+    );
+    transform: translateX(-120%) skewX(-12deg);
+    animation: logoLightSweep 1200ms ease forwards;
+    animation-delay: 3900ms;
+  }
+
+  @keyframes logoFadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes logoSlideIn {
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes logoRevealSoft {
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes logoRevealTitle {
+    0% {
+      opacity: 0;
+      transform: scale(0.92);
+      filter: blur(8px);
+    }
+
+    70% {
+      opacity: 1;
+      transform: scale(1.03);
+      filter: blur(0);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes logoDrawLine {
+    to {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes logoServiceIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes logoPopIn {
+    0% {
+      opacity: 0;
+      transform: translateY(14px) scale(0.94);
+    }
+
+    70% {
+      opacity: 1;
+      transform: translateY(0) scale(1.06);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes logoStarsIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.7);
+      filter: blur(4px);
+    }
+
+    60% {
+      opacity: 1;
+      transform: scale(1.12);
+      filter: blur(0);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes logoLightSweep {
+    0% {
+      opacity: 0;
+      transform: translateX(-120%) skewX(-12deg);
+    }
+
+    20% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateX(120%) skewX(-12deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .logo-layer,
+    .logo-light {
+      animation: none !important;
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+  }
+</style>

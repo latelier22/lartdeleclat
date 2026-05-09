@@ -4,6 +4,7 @@ import ScrollReveal from "../components/ScrollReveal.astro";
 import ScrollBlurImage from "../components/ScrollBlurImage.astro";
 import ContactCta from "../components/ContactCta.astro";
 import AutoImageSlider from "../components/AutoImageSlider.astro";
+import AnimatedLogo from "../components/AnimatedLogo.astro";
 
 const services = [
   {
@@ -67,7 +68,7 @@ const values = ["Artisanat", "Passion", "Détail", "Excellence", "Authenticité"
       </div>
 
       <div
-        class="mx-auto grid min-h-[50vh] max-w-7xl items-center gap-10 px-4 py-10 sm:px-6 md:py-14 lg:grid-cols-[1fr_0.95fr]"
+        class="mx-auto grid min-h-[72vh] max-w-7xl items-center gap-10 px-4 py-10 sm:px-6 md:py-14 lg:grid-cols-[1fr_0.95fr]"
       >
         <div class="slide-right">
           <div class="french-line mb-6"></div>
@@ -119,11 +120,12 @@ const values = ["Artisanat", "Passion", "Détail", "Excellence", "Authenticité"
           </div>
 
           <div class="relative home-glow-card rounded-[2.5rem]">
-            <img
-              src="/images/logo-art-eclat-hero.webp"
-              alt="L’art de l’éclat"
-              class="mx-auto w-full object-contain"
-            />
+              <!-- <img
+                src="/images/logo-art-eclat-hero.webp"
+                alt="L’art de l’éclat"
+                class="mx-auto w-full object-contain"
+              /> -->
+              <AnimatedLogo />
           </div>
         </div>
       </div>
@@ -264,6 +266,79 @@ const values = ["Artisanat", "Passion", "Détail", "Excellence", "Authenticité"
         </article>
       </div>
     </section>
+
+    <!-- BLOC EXPLICATIF VERNIS / PEINTURE -->
+<section class="mx-auto max-w-7xl px-4 py-10 sm:px-6 md:py-16">
+  <div class="home-glow-card zoom-in overflow-hidden rounded-[2.5rem]">
+    <div class="grid gap-0 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
+      
+      <!-- IMAGE EXPLICATIVE -->
+      <div class="relative min-h-[320px] overflow-hidden border-b border-white/10 bg-black/50 lg:border-b-0 lg:border-r">
+        <img
+          src="/images/comprendre-la-carosserie.webp"
+          alt="Schéma explicatif des défauts de vernis et de peinture automobile"
+          class="h-full min-h-[320px] w-full object-contain p-4 md:p-6"
+        />
+      </div>
+
+      <!-- TEXTE -->
+      <div class="flex flex-col justify-center p-8 md:p-12">
+        <p class="text-sm uppercase tracking-[0.35em] text-[var(--gold-light)]">
+          Comprendre les défauts
+        </p>
+
+        <h2 class="mt-4 text-4xl font-semibold md:text-5xl">
+          Toutes les marques ne se corrigent pas de la même façon.
+        </h2>
+
+        <p class="mt-6 text-lg leading-relaxed text-white/70">
+          La carrosserie est composée de plusieurs couches : le métal ou panneau,
+          l’apprêt, la couche de peinture, puis le vernis. Le polissage agit
+          principalement sur le vernis.
+        </p>
+
+        <div class="mt-8 grid gap-3">
+          <div class="rounded-2xl border border-white/10 bg-black/30 p-4">
+            <h3 class="text-lg font-semibold text-[var(--gold-light)]">
+              Rayures dans le vernis
+            </h3>
+            <p class="mt-2 text-white/65">
+              Ce sont les défauts les plus courants : micro-rayures, traces de lavage,
+              hologrammes ou voile terne. Ils peuvent souvent être corrigés par polissage.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-black/30 p-4">
+            <h3 class="text-lg font-semibold text-[var(--gold-light)]">
+              Rayures profondes ou dans la peinture
+            </h3>
+            <p class="mt-2 text-white/65">
+              Si la rayure traverse le vernis et atteint la peinture ou l’apprêt,
+              le polissage ne suffit plus toujours. Une retouche ou une intervention
+              carrosserie peut être nécessaire.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-black/30 p-4">
+            <h3 class="text-lg font-semibold text-[var(--gold-light)]">
+              Oxydation, taches et contamination
+            </h3>
+            <p class="mt-2 text-white/65">
+              Certaines marques viennent de dépôts, d’oxydation ou de contaminants
+              en surface. Une préparation adaptée permet de nettoyer, décontaminer
+              puis protéger la carrosserie.
+            </p>
+          </div>
+        </div>
+
+        <p class="mt-6 text-sm leading-relaxed text-white/45">
+          Un diagnostic visuel est indispensable avant toute correction afin de choisir
+          la méthode adaptée et de préserver l’épaisseur du vernis.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- SERVICES -->
     <section class="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20">
