@@ -2,6 +2,40 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ContactCta from "../components/ContactCta.astro";
 import ScrollReveal from "../components/ScrollReveal.astro";
+import SophroMozaicFlip from "../components/SophroMozaicFlip.astro";
+
+
+const realisations = [
+  "/images/realisations-00001.jpeg",
+  "/images/realisations-00002.jpeg",
+  "/images/realisations-00003.jpeg",
+  "/images/realisations-00004.jpeg",
+  "/images/realisations-00005.jpeg",
+  "/images/realisations-00006.jpeg",
+  "/images/realisations-00007.jpeg",
+  "/images/realisations-00008.jpeg",
+  "/images/realisations-00009.jpeg",
+  "/images/realisations-00010.jpeg",
+  "/images/realisations-00011.jpeg",
+  "/images/realisations-00012.jpeg",
+  "/images/realisations-00013.jpeg",
+  "/images/realisations-00014.jpeg",
+  "/images/realisations-00015.jpeg",
+  "/images/realisations-00016.jpeg",
+  "/images/realisations-00017.jpeg",
+  "/images/realisations-00018.jpeg",
+  "/images/realisations-00019.jpeg",
+  "/images/realisations-00020.jpeg",
+  "/images/realisations-00021.jpeg",
+  "/images/realisations-00022.jpeg",
+  "/images/realisations-00023.jpeg",
+  "/images/realisations-00024.jpeg",
+  "/images/realisations-00025.jpeg",
+  "/images/realisations-00026.jpeg",
+  "/images/realisations-00027.jpeg",
+  "/images/realisations-00028.jpeg",
+  "/images/realisations-00029.jpeg"
+];
 
 const optiques = [
   {
@@ -119,6 +153,27 @@ const etapesOptiques = [
       </div>
     
   </section>
+
+<section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-20">
+  <div class="mb-10 max-w-3xl fade-in">
+    <p class="text-sm uppercase tracking-[0.35em] text-[var(--gold-light)]">
+      Galerie
+    </p>
+
+    <h2 class="mt-4 text-4xl font-semibold md:text-5xl">
+      Quelques réalisations en images.
+    </h2>
+
+    <p class="mt-5 text-lg leading-relaxed text-white/65">
+      Une sélection de travaux réalisés : optiques, vernis, finitions et interventions de detailing.
+    </p>
+  </div>
+
+  <SophroMozaicFlip
+    images={realisations}
+    intervalMs={2200}
+  />
+</section>
 
   <!-- VERNIS -->
   <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-20">
