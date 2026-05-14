@@ -47,8 +47,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               22600 Trévé
             </p>
           </div>
+
+          <div>
+            <p class="text-sm uppercase tracking-[0.25em] text-white/40">N° SIRET</p>
+            <a href="tel:0780034686" class="mt-1 block text-xl text-[var(--gold-light)]">
+              10441683900017
+            </a>
+          </div>
         </div>
       </div>
+
+      
 {
   Astro.url.searchParams.get("status") === "ok" && (
     <div class="mb-6 rounded-2xl border border-green-500/40 bg-green-500/10 p-4 text-green-200">
